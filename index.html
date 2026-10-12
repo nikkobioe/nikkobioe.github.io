@@ -140,68 +140,83 @@
       85%, 100% { opacity: 0; }
     }
 
-    /* Leukemogenesis Animation Keyframes */
+    /* Step-Wise Leukemogenesis Animation Keyframes */
     .leukemia-animate #leukemia-svg-content {
-      animation: animFadeLoop 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      animation: animFadeLoop 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .leukemia-animate #cell-bm-egress {
-      animation: animBMtoThymus 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* STEP 1: Progenitor Egress from Bone Marrow to Thymic Cortex */
+    .leukemia-animate #cell-step1-bm-egress {
+      animation: animStep1BM 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .leukemia-animate #cell-cortex-divide-1 {
-      animation: animCortexDivision1 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* STEP 2: Early Thymocyte Proliferation & Corticomedullary Migration */
+    .leukemia-animate #cell-step2-cortex-a {
+      animation: animStep2CortexA 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .leukemia-animate #cell-step2-cortex-b {
+      animation: animStep2CortexB 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .leukemia-animate #cell-cortex-divide-2 {
-      animation: animCortexDivision2 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* STEP 3: Transformed Leukemic Blasts in Medulla & Proliferation */
+    .leukemia-animate #cell-step3-medulla-blast1 {
+      animation: animStep3Medulla1 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .leukemia-animate #cell-step3-medulla-blast2 {
+      animation: animStep3Medulla2 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .leukemia-animate #cell-medulla-leukemic {
-      animation: animMedullaBlast 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* STEP 4: Peripheral Egress & Explosive Malignant Proliferation */
+    .leukemia-animate #cell-step4-peripheral-mass {
+      animation: animStep4Peripheral 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .leukemia-animate #cell-peripheral-engraft {
-      animation: animPeripheralEngraft 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    @keyframes animStep1BM {
+      0% { transform: translate(90px, 220px) scale(0.5); opacity: 0; }
+      3% { transform: translate(90px, 220px) scale(1); opacity: 1; }
+      18% { transform: translate(350px, 155px) scale(1); opacity: 1; }
+      22% { transform: translate(350px, 155px) scale(1.15); opacity: 1; }
+      25%, 100% { transform: translate(350px, 155px) scale(0); opacity: 0; }
     }
 
-    @keyframes animBMtoThymus {
-      0% { transform: translate(160px, 220px) scale(0.6); opacity: 0; }
-      8% { transform: translate(180px, 210px) scale(1); opacity: 1; }
-      28% { transform: translate(350px, 170px) scale(1); opacity: 1; }
-      35%, 100% { transform: translate(380px, 175px) scale(0.9); opacity: 0.8; }
+    @keyframes animStep2CortexA {
+      0%, 21% { transform: translate(350px, 155px) scale(0); opacity: 0; }
+      23% { transform: translate(350px, 155px) scale(0.8); opacity: 1; }
+      30% { transform: translate(390px, 155px) scale(1); opacity: 1; }
+      42% { transform: translate(430px, 260px) scale(1.1); opacity: 1; }
+      48%, 100% { transform: translate(430px, 260px) scale(0); opacity: 0; }
     }
 
-    @keyframes animCortexDivision1 {
-      0%, 25% { transform: translate(380px, 175px) scale(0); opacity: 0; }
-      32% { transform: translate(380px, 175px) scale(1); opacity: 1; }
-      45% { transform: translate(430px, 175px) scale(1.15); opacity: 1; }
-      55% { transform: translate(460px, 205px) scale(1); opacity: 1; }
-      75% { transform: translate(480px, 235px) scale(1); opacity: 0.8; }
-      82%, 100% { opacity: 0; }
+    @keyframes animStep2CortexB {
+      0%, 21% { transform: translate(350px, 155px) scale(0); opacity: 0; }
+      24% { transform: translate(350px, 155px) scale(0.8); opacity: 1; }
+      32% { transform: translate(420px, 175px) scale(1); opacity: 1; }
+      44% { transform: translate(480px, 270px) scale(1.1); opacity: 1; }
+      48%, 100% { transform: translate(480px, 270px) scale(0); opacity: 0; }
     }
 
-    @keyframes animCortexDivision2 {
-      0%, 35% { transform: translate(410px, 175px) scale(0); opacity: 0; }
-      45% { transform: translate(445px, 195px) scale(1); opacity: 1; }
-      58% { transform: translate(490px, 245px) scale(1.1); opacity: 1; }
-      75% { transform: translate(520px, 275px) scale(1); opacity: 0.9; }
-      82%, 100% { opacity: 0; }
+    @keyframes animStep3Medulla1 {
+      0%, 43% { transform: translate(430px, 260px) scale(0); opacity: 0; }
+      46% { transform: translate(430px, 260px) scale(1); opacity: 1; }
+      56% { transform: translate(460px, 280px) scale(1.15); opacity: 1; }
+      68% { transform: translate(740px, 240px) scale(1); opacity: 1; }
+      72%, 100% { transform: translate(740px, 240px) scale(0); opacity: 0; }
     }
 
-    @keyframes animMedullaBlast {
-      0%, 48% { transform: translate(460px, 255px) scale(0); opacity: 0; }
-      55% { transform: translate(460px, 255px) scale(1); opacity: 1; }
-      68% { transform: translate(580px, 280px) scale(1.15); opacity: 1; }
-      78% { transform: translate(660px, 250px) scale(1); opacity: 1; }
-      85%, 100% { opacity: 0; }
+    @keyframes animStep3Medulla2 {
+      0%, 45% { transform: translate(480px, 270px) scale(0); opacity: 0; }
+      48% { transform: translate(480px, 270px) scale(1); opacity: 1; }
+      58% { transform: translate(520px, 260px) scale(1.15); opacity: 1; }
+      70% { transform: translate(755px, 255px) scale(1); opacity: 1; }
+      74%, 100% { transform: translate(755px, 255px) scale(0); opacity: 0; }
     }
 
-    @keyframes animPeripheralEngraft {
-      0%, 62% { transform: translate(770px, 240px) scale(0.5); opacity: 0; }
-      70% { transform: translate(770px, 240px) scale(1); opacity: 1; }
-      78%, 82% { transform: translate(770px, 240px) scale(1.12); opacity: 1; }
-      88%, 100% { opacity: 0; }
+    @keyframes animStep4Peripheral {
+      0%, 67% { transform: translate(760px, 240px) scale(0.3); opacity: 0; }
+      72% { transform: translate(780px, 240px) scale(0.9); opacity: 1; }
+      80% { transform: translate(780px, 240px) scale(1.25); opacity: 1; }
+      85% { transform: translate(780px, 240px) scale(1.25); opacity: 1; }
+      90%, 100% { transform: translate(780px, 240px) scale(1); opacity: 0; }
     }
   </style>
 </head>
@@ -563,37 +578,38 @@
             </div>
           </div>
 
-          <!-- Childhood Leukemogenesis Card with Smooth Vector Animation -->
+          <!-- Childhood Leukemogenesis Card with Step-Wise Vector Animation -->
           <div id="childhood-leukemogenesis" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
             <div class="border-b border-gray-100 pb-4">
               <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Developmental Oncology</span>
               <h2 class="text-lg font-bold text-gray-900 mt-2">Childhood T Cell Leukemogenesis & Aberrant Thymopoiesis</h2>
             </div>
 
-            <!-- Vector Schematic Canvas with Progenitor Migration Animation -->
+            <!-- Vector Schematic Canvas with Step-Wise Progenitor Migration Animation -->
             <div class="relative w-full aspect-[16/9] bg-gray-50/50 rounded-lg border border-gray-200/80 flex items-center justify-center overflow-hidden">
               <svg id="leukemia-svg" viewBox="0 0 900 480" class="w-full h-full select-none leukemia-animate">
-                <defs>
-                  <marker id="leukemia-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#005ca7" />
-                  </marker>
-                  <marker id="leukemia-arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#01a7e1" />
-                  </marker>
-                  <marker id="leukemia-arrow-navy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f1d40" />
-                  </marker>
-                </defs>
 
                 <g id="leukemia-svg-content">
                   
                   <!-- 1. BONE MARROW NICHE (LEFT) -->
-                  <g transform="translate(100, 240)">
-                    <!-- Vector Bone Shape -->
-                    <path d="M -45 -110 C -60 -110 -70 -95 -55 -80 C -50 -75 -40 -60 -40 -30 L -40 30 C -40 60 -50 75 -55 80 C -70 95 -60 110 -45 110 C -30 110 -25 95 -20 85 L 20 85 C 25 95 30 110 45 110 C 60 110 70 95 55 80 C 50 75 40 60 40 30 L 40 -30 C 40 -60 50 -75 55 -80 C 70 -95 60 -110 45 -110 C 30 -110 25 -95 20 -85 L -20 -85 C -25 -95 -30 -110 -45 -110 Z" 
-                          fill="#e0f2fe" stroke="#005ca7" stroke-width="4" stroke-linejoin="round" />
+                  <g transform="translate(100, 230)">
+                    <!-- Classic Tilted Long Bone Graphic -->
+                    <g transform="rotate(-28) scale(0.92)">
+                      <path d="M 0 -75 
+                               C -10 -95, -38 -95, -38 -75 
+                               C -38 -58, -25 -40, -10 -20 
+                               C -5 0, -5 20, -10 40 
+                               C -25 60, -38 68, -38 85 
+                               C -38 102, -10 102, 0 85 
+                               C 10 102, 38 102, 38 85 
+                               C 38 68, 25 60, 10 40 
+                               C 5 20, 5 0, 10 -20 
+                               C 25 -40, 38 -58, 38 -75 
+                               C 38 -95, 10 -95, 0 -75 Z" 
+                            fill="#c5b396" stroke="#b09e82" stroke-width="2" stroke-linejoin="round" />
+                    </g>
                     
-                    <!-- Static Quiescent Progenitors in Bone Marrow -->
+                    <!-- Static Resident Bone Marrow Stem Cells -->
                     <circle cx="-10" cy="-30" r="16" fill="#e0f2fe" stroke="#005ca7" stroke-width="3"/>
                     <circle cx="-15" cy="-28" r="7" fill="#0f1d40"/>
                     
@@ -619,18 +635,12 @@
                     <text x="-140" y="-115" fill="#005ca7" font-size="14" font-weight="700">Thymic Cortex</text>
                     <text x="-140" y="25" fill="#0f1d40" font-size="14" font-weight="700">Thymic Medulla</text>
 
-                    <!-- Static Resident Thymocyte Clusters in Cortex & Medulla -->
-                    <!-- Cortex Cells -->
+                    <!-- Background Reference Cells in Cortex & Medulla -->
                     <circle cx="-60" cy="-60" r="18" fill="#e0f2fe" stroke="#005ca7" stroke-width="3"/>
                     <circle cx="-65" cy="-58" r="8" fill="#01a7e1"/>
                     
-                    <!-- Medulla Leukemic Transformants -->
                     <circle cx="-20" cy="50" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
                     <circle cx="-23" cy="52" r="8" fill="#475569"/>
-                    <circle cx="15" cy="65" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
-                    <circle cx="12" cy="67" r="8" fill="#475569"/>
-                    <circle cx="-5" cy="85" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
-                    <circle cx="-8" cy="87" r="8" fill="#475569"/>
 
                     <text x="-135" y="170" fill="#0f1d40" font-size="16" font-weight="700">Aberrant Thymopoiesis & Transformation</text>
                   </g>
@@ -640,57 +650,57 @@
                     <!-- Peripheral Organ Outline (Spleen / Lymph Node Silhouette) -->
                     <path d="M -50 -90 C 20 -110 70 -60 70 0 C 70 60 20 110 -50 90 C -80 70 -70 -70 -50 -90 Z" 
                           fill="#f1f5f9" stroke="#64748b" stroke-width="4" />
-                    
-                    <!-- Leukemic Blasts Clustered inside Peripheral Organ -->
-                    <circle cx="-10" cy="-35" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3"/>
-                    <circle cx="-13" cy="-33" r="8" fill="#0f1d40"/>
-                    <circle cx="20" cy="-20" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3"/>
-                    <circle cx="17" cy="-18" r="8" fill="#0f1d40"/>
-                    <circle cx="0" cy="15" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3"/>
-                    <circle cx="-3" cy="17" r="8" fill="#0f1d40"/>
 
                     <text x="-110" y="145" fill="#334155" font-size="16" font-weight="700">Malignant Peripheral Engraftment</text>
                   </g>
 
-                  <!-- CURVED MIGRATION PATH ARROWS -->
-                  <!-- BM -> Cortex -->
-                  <path d="M 160 210 C 220 130, 260 130, 310 140" stroke="#005ca7" stroke-width="3" fill="none" marker-end="url(#leukemia-arrow)"/>
-                  <!-- Cortex -> Medulla Differentiation -->
-                  <path d="M 430 145 C 500 160, 520 210, 470 240" stroke="#01a7e1" stroke-width="3" fill="none" marker-end="url(#leukemia-arrow-cyan)"/>
-                  <!-- Medulla -> Peripheral Egress -->
-                  <path d="M 590 270 C 650 310, 680 290, 715 250" stroke="#0f1d40" stroke-width="3" fill="none" marker-end="url(#leukemia-arrow-navy)"/>
+                  <!-- DYNAMIC STEP-WISE ANIMATED CELLS -->
 
-                  <!-- ANIMATED DYNAMIC T-CELL PROGENITORS & LEUKEMIC BLASTS -->
-                  <!-- Cell 1: Egressing from BM to Thymic Cortex -->
-                  <g id="cell-bm-egress">
+                  <!-- STEP 1: Healthy Progenitor Egressing from BM to Thymic Cortex -->
+                  <g id="cell-step1-bm-egress">
                     <circle cx="0" cy="0" r="16" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="7" fill="#005ca7"/>
                   </g>
 
-                  <!-- Cell 2: Rapidly Dividing Progenitor 1 in Cortex -->
-                  <g id="cell-cortex-divide-1">
-                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                  <!-- STEP 2: Early Thymocytes Differentiating & Proliferating in Corticomedullary Region -->
+                  <g id="cell-step2-cortex-a">
+                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="7.5" fill="#01a7e1"/>
                   </g>
 
-                  <!-- Cell 3: Rapidly Dividing Progenitor 2 in Cortex -->
-                  <g id="cell-cortex-divide-2">
-                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                  <g id="cell-step2-cortex-b">
+                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="7.5" fill="#01a7e1"/>
                   </g>
 
-                  <!-- Cell 4: Transformed Leukemic Blast in Medulla -->
-                  <g id="cell-medulla-leukemic">
+                  <!-- STEP 3: Transformed Leukemic Blasts Proliferating in Medulla -->
+                  <g id="cell-step3-medulla-blast1">
                     <circle cx="0" cy="0" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="8" fill="#0f1d40"/>
                   </g>
 
-                  <!-- Cell 5: Rapidly Proliferating Leukemic Engraftment in Peripheral Tissue -->
-                  <g id="cell-peripheral-engraft">
-                    <circle cx="15" cy="25" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
-                    <circle cx="12" cy="27" r="8" fill="#0f1d40"/>
-                    <circle cx="-15" cy="-10" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
-                    <circle cx="-18" cy="-8" r="8" fill="#0f1d40"/>
+                  <g id="cell-step3-medulla-blast2">
+                    <circle cx="0" cy="0" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-3" cy="2" r="8" fill="#0f1d40"/>
+                  </g>
+
+                  <!-- STEP 4: Explosive Malignant Proliferation & Engraftment in Peripheral Tissue -->
+                  <g id="cell-step4-peripheral-mass">
+                    <!-- Clustered Leukemic Blasts Mass -->
+                    <circle cx="-15" cy="-20" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-18" cy="-18" r="8" fill="#0f1d40"/>
+                    
+                    <circle cx="15" cy="-15" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="12" cy="-13" r="8" fill="#0f1d40"/>
+
+                    <circle cx="-20" cy="15" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-23" cy="17" r="8" fill="#0f1d40"/>
+
+                    <circle cx="10" cy="20" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="7" cy="22" r="8" fill="#0f1d40"/>
+
+                    <circle cx="0" cy="-2" r="19" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-3" cy="0" r="8.5" fill="#0f1d40"/>
                   </g>
 
                 </g>
