@@ -250,9 +250,7 @@
           </button>
           <div id="nav-research-items" class="submenu-transition max-h-0 pl-3 space-y-1.5 pt-1 text-sm">
             <a href="#overview" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Overview</a>
-            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">T cell engagers</a>
-            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Childhood leukemogenesis</a>
-            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Biophysics and Biomaterials</a>
+            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Fluid-Structure Interaction</a>
           </div>
         </div>
 
@@ -418,7 +416,7 @@
 
         <div class="space-y-8">
           
-          <!-- Systems Pharmacology Card with Smooth Continuous Vector Animation -->
+          <!-- Systems Pharmacology Card with Smooth Vector Animation -->
           <div id="fsi" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
             <div class="border-b border-gray-100 pb-4">
               <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Systems Pharmacology</span>
@@ -489,38 +487,34 @@
                   <!-- CURVED ENGAGEMENT ARROW -->
                   <path id="bite-curved-arrow" d="M 320 360 C 420 420, 580 420, 670 330" fill="none" stroke="#005ca7" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#bite-arrow)"/>
 
-                  <!-- BISPECIFIC T CELL ENGAGER (BiTE BARREL DOMAINS IN UBC PALETTE) -->
+                  <!-- BISPECIFIC T CELL ENGAGER (BiTE DOMAINS ACCURATELY STRUCTURED) -->
                   <g id="bite-molecule" transform="translate(450, 75)">
-                    <!-- Connecting Coiled Wire Loops -->
-                    <path d="M -30 -10 C -15 -25, -15 25, 0 10 C 15 -5, 15 25, 30 10" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M -30 10 C -15 25, -15 -25, 0 -10 C 15 5, 15 -25, 30 -10" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Linker Backbone Ribbon Lines -->
+                    <path d="M -75 -20 C -98 -20, -98 -2, -75 -2 L -25 -2 C -10 -2, -10 20, -15 20" 
+                          fill="none" stroke="#0f1d40" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="-15" y1="-10" x2="15" y2="10" 
+                          stroke="#0f1d40" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M 15 -20 C -2 -20, -2 2, 20 2 L 75 2 C 98 2, 98 20, 75 20" 
+                          fill="none" stroke="#0f1d40" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-                    <!-- Left scFv Domain (Anti-CD3 Barrels in UBC Navy & Blue) -->
-                    <g transform="translate(-28, 0)">
-                      <g transform="translate(-8, -12) rotate(-25)">
-                        <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#0f1d40" stroke="#005ca7" stroke-width="2"/>
-                        <ellipse cx="0" cy="-8" rx="10" ry="3" fill="#44b4e4"/>
-                      </g>
-                      <g transform="translate(8, 12) rotate(-25)">
-                        <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#005ca7" stroke="#0f1d40" stroke-width="2"/>
-                        <ellipse cx="0" cy="-8" rx="10" ry="3" fill="#70c4e8"/>
-                      </g>
-                    </g>
+                    <!-- Left Pair (Anti-CD3 scFv Barrels in UBC Navy & Blue) -->
+                    <!-- Top-Left Barrel (Concave Left, Convex Right) -->
+                    <path d="M -75 -32 L -15 -32 A 12 12 0 0 1 -15 -8 L -75 -8 A 12 12 0 0 0 -75 -32 Z" 
+                          fill="#0f1d40" stroke="#0f1d40" stroke-width="1.5"/>
+                    <!-- Bottom-Left Barrel (Concave Left, Convex Right) -->
+                    <path d="M -75 8 L -15 8 A 12 12 0 0 1 -15 32 L -75 32 A 12 12 0 0 0 -75 8 Z" 
+                          fill="#005ca7" stroke="#005ca7" stroke-width="1.5"/>
 
-                    <!-- Right scFv Domain (Anti-TAA Barrels in UBC Light Blue & Cyan) -->
-                    <g transform="translate(28, 0)">
-                      <g transform="translate(-8, -12) rotate(25)">
-                        <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#01a7e1" stroke="#005ca7" stroke-width="2"/>
-                        <ellipse cx="0" cy="-8" rx="10" ry="3" fill="#e0f2fe"/>
-                      </g>
-                      <g transform="translate(8, 12) rotate(25)">
-                        <rect x="-10" y="-8" width="20" height="16" rx="4" fill="#44b4e4" stroke="#01a7e1" stroke-width="2"/>
-                        <ellipse cx="0" cy="-8" rx="10" ry="3" fill="#01a7e1"/>
-                      </g>
-                    </g>
+                    <!-- Right Pair (Anti-TAA scFv Barrels in UBC Cyan & Sky Blue) -->
+                    <!-- Top-Right Barrel (Convex Left, Concave Right) -->
+                    <path d="M 15 -32 L 75 -32 A 12 12 0 0 0 75 -8 L 15 -8 A 12 12 0 0 1 15 -32 Z" 
+                          fill="#01a7e1" stroke="#01a7e1" stroke-width="1.5"/>
+                    <!-- Bottom-Right Barrel (Convex Left, Concave Right) -->
+                    <path d="M 15 8 L 75 8 A 12 12 0 0 0 75 32 L 15 32 A 12 12 0 0 1 15 8 Z" 
+                          fill="#44b4e4" stroke="#44b4e4" stroke-width="1.5"/>
 
                     <!-- Label -->
-                    <g id="bite-molecule-label" transform="translate(-40, -42)">
+                    <g id="bite-molecule-label" transform="translate(-40, -48)">
                       <text x="0" y="0" fill="#0f1d40" font-size="13" font-weight="700">BiTE Construct</text>
                       <path d="M 40 5 L 40 18" stroke="#0f1d40" stroke-width="1.5" marker-end="url(#bite-arrow)"/>
                     </g>
