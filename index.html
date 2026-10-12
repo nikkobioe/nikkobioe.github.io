@@ -218,35 +218,6 @@
       85% { transform: translate(780px, 240px) scale(1.25); opacity: 1; }
       90%, 100% { transform: translate(780px, 240px) scale(1); opacity: 0; }
     }
-
-    /* Hydrogel Thymopoiesis Animation Keyframes (distilled from image_7.png) */
-    .hydrogel-animate #hydrogel-svg-content {
-      animation: animFadeLoop 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-
-    /* Cell movement to aggregate */
-    .hydrogel-animate #dynamic-cell-aggregation {
-      animation: animAggregateDiv 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-
-    /* Proliferation/Division events */
-    .hydrogel-animate .proliferation-cell {
-      animation: animProliferate 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-
-    @keyframes animAggregateDiv {
-      0% { transform: translate(0,0); opacity: 1; }
-      3% { opacity: 0; }
-      22%, 80% { opacity: 0; }
-      88%, 100% { opacity: 1; transform: translate(0,0); }
-    }
-
-    @keyframes animProliferate {
-      0%, 30% { transform: translate(0,0); opacity: 1; }
-      45%, 80% { opacity: 0; }
-      88%, 100% { transform: translate(0,0); opacity: 1; }
-    }
-
   </style>
 </head>
 
@@ -467,7 +438,7 @@
               <!-- GitHub -->
               <a href="https://github.com/nikkobioe" target="_blank" rel="noopener noreferrer" title="GitHub" class="w-8 h-8 rounded-full bg-ubc-navy text-white flex items-center justify-center hover:bg-ubc-blue transition-colors">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12(3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                 </svg>
               </a>
 
@@ -597,7 +568,7 @@
               </svg>
             </div>
 
-            <p class="text-xs text-gray-1000 leading-relaxed pt-1">
+            <p class="text-xs text-gray-600 leading-relaxed pt-1">
               Investigating quantitative dynamics and biological parameters driving bispecific T cell engager function in pediatric leukemias.
             </p>
 
@@ -607,45 +578,38 @@
             </div>
           </div>
 
-          <!-- Childhood Leukemogenesis Card with Smooth Vector Animation -->
+          <!-- Childhood Leukemogenesis Card with Step-Wise Vector Animation & Dense Thymic Medulla Cluster -->
           <div id="childhood-leukemogenesis" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
             <div class="border-b border-gray-100 pb-4">
-              <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Developmental Oncology & Synthetic Biology</span>
-              <h2 class="text-lg font-bold text-gray-900 mt-2">Childhood T Cell Leukemogenesis</h2>
+              <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Developmental Oncology</span>
+              <h2 class="text-lg font-bold text-gray-900 mt-2">Childhood T Cell Leukemogenesis & Aberrant Thymopoiesis</h2>
             </div>
 
             <!-- Vector Schematic Canvas with Step-Wise Progenitor Migration Animation -->
             <div class="relative w-full aspect-[16/9] bg-gray-50/50 rounded-lg border border-gray-200/80 flex items-center justify-center overflow-hidden">
               <svg id="leukemia-svg" viewBox="0 0 900 480" class="w-full h-full select-none leukemia-animate">
-                <defs>
-                  <marker id="leukemia-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#005ca7" />
-                  </marker>
-                  <marker id="leukemia-arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#01a7e1" />
-                  </marker>
-                  <marker id="leukemia-arrow-navy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f1d40" />
-                  </marker>
-                </defs>
 
                 <g id="leukemia-svg-content">
                   
                   <!-- 1. BONE MARROW NICHE (LEFT) -->
-                  <g transform="translate(100, 240)">
-                    <!-- Vector Bone Shape -->
-                    <path d="M -45 -110 C -60 -110 -70 -95 -55 -80 C -50 -75 -40 -60 -40 -30 L -40 30 C -40 60 -50 75 -55 80 C -70 95 -60 110 -45 110 C -30 110 -25 95 -20 85 L 20 85 C 25 95 30 110 45 110 C 60 110 70 95 55 80 C 50 75 40 60 40 30 L 40 -30 C 40 -60 50 -75 55 -80 C 70 -95 60 -110 45 -110 C 30 -110 25 -95 20 -85 L -20 -85 C -25 -95 -30 -110 -45 -110 Z" 
-                          fill="#e0f2fe" stroke="#005ca7" stroke-width="4" stroke-linejoin="round" />
-                    
-                    <!-- Static Quiescent Progenitors in Bone Marrow -->
-                    <circle cx="-10" cy="-30" r="16" fill="#e0f2fe" stroke="#005ca7" stroke-width="3"/>
-                    <circle cx="-15" cy="-28" r="7" fill="#0f1d40"/>
-                    
-                    <circle cx="12" cy="20" r="14" fill="#e0f2fe" stroke="#005ca7" stroke-width="3"/>
-                    <circle cx="10" cy="22" r="6" fill="#0f1d40"/>
+                  <g transform="translate(100, 230)">
+                    <!-- Classic Tilted Long Bone Graphic -->
+                    <g transform="rotate(-28) scale(0.92)">
+                      <path d="M 0 -75 
+                               C -10 -95, -38 -95, -38 -75 
+                               C -38 -58, -25 -40, -10 -20 
+                               C -5 0, -5 20, -10 40 
+                               C -25 60, -38 68, -38 85 
+                               C -38 102, -10 102, 0 85 
+                               C 10 102, 38 102, 38 85 
+                               C 38 68, 25 60, 10 40 
+                               C 5 20, 5 0, 10 -20 
+                               C 25 -40, 38 -58, 38 -75 
+                               C 38 -95, 10 -95, 0 -75 Z" 
+                            fill="#c5b396" stroke="#b09e82" stroke-width="2" stroke-linejoin="round" />
+                    </g>
 
                     <text x="-65" y="145" fill="#0f1d40" font-size="16" font-weight="700">Bone Marrow Niche</text>
-                    <text x="-55" y="165" fill="#005ca7" font-size="12" font-weight="600">CD34⁺ CLP Egress</text>
                   </g>
 
                   <!-- 2. THYMUS ORGAN & ABERRANT THYMOPOIESIS (MIDDLE) -->
@@ -663,20 +627,50 @@
                     <text x="-140" y="-115" fill="#005ca7" font-size="14" font-weight="700">Thymic Cortex</text>
                     <text x="-140" y="25" fill="#0f1d40" font-size="14" font-weight="700">Thymic Medulla</text>
 
-                    <!-- Static Resident Thymocyte Clusters in Cortex & Medulla -->
-                    <!-- Cortex Cells -->
-                    <circle cx="-60" cy="-60" r="18" fill="#e0f2fe" stroke="#005ca7" stroke-width="3"/>
-                    <circle cx="-65" cy="-58" r="8" fill="#01a7e1"/>
-                    
-                    <!-- Medulla Leukemic Transformants -->
-                    <circle cx="-20" cy="50" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
-                    <circle cx="-23" cy="52" r="8" fill="#475569"/>
-                    <circle cx="15" cy="65" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
-                    <circle cx="12" cy="67" r="8" fill="#475569"/>
-                    <circle cx="-5" cy="85" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
-                    <circle cx="-8" cy="87" r="8" fill="#475569"/>
+                    <!-- Background Reference Cells in Cortex -->
+                    <circle cx="-70" cy="-65" r="17" fill="#e0f2fe" stroke="#005ca7" stroke-width="2.5"/>
+                    <circle cx="-73" cy="-63" r="7.5" fill="#01a7e1"/>
 
-                    <text x="-135" y="170" fill="#0f1d40" font-size="16" font-weight="700">Aberrant Thymopoiesis & Transformation</text>
+                    <circle cx="20" cy="-75" r="17" fill="#e0f2fe" stroke="#005ca7" stroke-width="2.5"/>
+                    <circle cx="17" cy="-73" r="7.5" fill="#01a7e1"/>
+
+                    <!-- DENSE MEDULLA LEUKEMIC TRANSFORMING CELL CLUSTER (UBC GRAY / SLATE PALETTE) -->
+                    <g id="medulla-leukemic-cluster">
+                      <circle cx="-45" cy="45" r="16" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-48" cy="43" r="7" fill="#475569"/>
+
+                      <circle cx="-18" cy="35" r="17" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-21" cy="33" r="7.5" fill="#475569"/>
+
+                      <circle cx="12" cy="38" r="16" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="9" cy="36" r="7" fill="#475569"/>
+
+                      <circle cx="42" cy="45" r="16.5" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="39" cy="43" r="7" fill="#475569"/>
+
+                      <circle cx="-52" cy="70" r="16" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-55" cy="68" r="7" fill="#475569"/>
+
+                      <circle cx="-26" cy="65" r="17.5" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-29" cy="63" r="7.5" fill="#475569"/>
+
+                      <circle cx="2" cy="60" r="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-1" cy="58" r="8" fill="#0f1d40"/>
+
+                      <circle cx="30" cy="68" r="17" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="27" cy="66" r="7.5" fill="#475569"/>
+
+                      <circle cx="-35" cy="92" r="16" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-38" cy="90" r="7" fill="#475569"/>
+
+                      <circle cx="-8" cy="90" r="17" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="-11" cy="88" r="7.5" fill="#475569"/>
+
+                      <circle cx="20" cy="92" r="16.5" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+                      <circle cx="17" cy="90" r="7" fill="#475569"/>
+                    </g>
+
+                    <text x="0" y="170" text-anchor="middle" fill="#0f1d40" font-size="15" font-weight="700">Aberrant Thymopoiesis and Malignant Transformation</text>
                   </g>
 
                   <!-- 3. PERIPHERAL TISSUES / LEUKEMIC ENGRAFTMENT (RIGHT) -->
@@ -684,205 +678,76 @@
                     <!-- Peripheral Organ Outline (Spleen / Lymph Node Silhouette) -->
                     <path d="M -50 -90 C 20 -110 70 -60 70 0 C 70 60 20 110 -50 90 C -80 70 -70 -70 -50 -90 Z" 
                           fill="#f1f5f9" stroke="#64748b" stroke-width="4" />
-                    
-                    <!-- Leukemic Blasts Clustered inside Peripheral Organ -->
-                    <circle cx="-10" cy="-35" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3"/>
-                    <circle cx="-13" cy="-33" r="8" fill="#0f1d40"/>
-                    <circle cx="20" cy="-20" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3"/>
-                    <circle cx="17" cy="-18" r="8" fill="#0f1d40"/>
-                    <circle cx="0" cy="15" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3"/>
-                    <circle cx="-3" cy="17" r="8" fill="#0f1d40"/>
 
-                    <text x="-110" y="145" fill="#334155" font-size="16" font-weight="700">Malignant Peripheral Engraftment</text>
+                    <text x="0" y="145" text-anchor="middle" fill="#334155" font-size="16" font-weight="700">Malignancy</text>
                   </g>
 
-                  <!-- CURVED MIGRATION PATH ARROWS -->
-                  <!-- BM -> Cortex -->
-                  <path d="M 160 210 C 220 130, 260 130, 310 140" stroke="#005ca7" stroke-width="3" fill="none" marker-end="url(#leukemia-arrow)"/>
-                  <!-- Cortex -> Medulla Differentiation -->
-                  <path d="M 430 145 C 500 160, 520 210, 470 240" stroke="#01a7e1" stroke-width="3" fill="none" marker-end="url(#leukemia-arrow-cyan)"/>
-                  <!-- Medulla -> Peripheral Egress -->
-                  <path d="M 590 270 C 650 310, 680 290, 715 250" stroke="#0f1d40" stroke-width="3" fill="none" marker-end="url(#leukemia-arrow-navy)"/>
+                  <!-- DYNAMIC STEP-WISE ANIMATED CELLS -->
 
-                  <!-- ANIMATED DYNAMIC T-CELL PROGENITORS & LEUKEMIC BLASTS -->
-                  <!-- Cell 1: Egressing from BM to Thymic Cortex -->
-                  <g id="cell-bm-egress">
+                  <!-- STEP 1: Healthy Progenitor Egressing from BM to Thymic Cortex -->
+                  <g id="cell-step1-bm-egress">
                     <circle cx="0" cy="0" r="16" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="7" fill="#005ca7"/>
                   </g>
 
-                  <!-- Cell 2: Rapidly Dividing Progenitor 1 in Cortex -->
-                  <g id="cell-cortex-divide-1">
-                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                  <!-- STEP 2: Early Thymocytes Differentiating & Proliferating in Corticomedullary Region -->
+                  <g id="cell-step2-cortex-a">
+                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="7.5" fill="#01a7e1"/>
                   </g>
 
-                  <!-- Cell 3: Rapidly Dividing Progenitor 2 in Cortex -->
-                  <g id="cell-cortex-divide-2">
-                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                  <g id="cell-step2-cortex-b">
+                    <circle cx="0" cy="0" r="17" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="7.5" fill="#01a7e1"/>
                   </g>
 
-                  <!-- Cell 4: Transformed Leukemic Blast in Medulla -->
-                  <g id="cell-medulla-leukemic">
+                  <!-- STEP 3: Transformed Leukemic Blasts Proliferating in Medulla -->
+                  <g id="cell-step3-medulla-blast1">
                     <circle cx="0" cy="0" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
                     <circle cx="-3" cy="2" r="8" fill="#0f1d40"/>
                   </g>
 
-                  <!-- Cell 5: Rapidly Proliferating Leukemic Engraftment in Peripheral Tissue -->
-                  <g id="cell-peripheral-engraft">
-                    <circle cx="15" cy="25" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
-                    <circle cx="12" cy="27" r="8" fill="#0f1d40"/>
-                    <circle cx="-15" cy="-10" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
-                    <circle cx="-18" cy="-8" r="8" fill="#0f1d40"/>
+                  <g id="cell-step3-medulla-blast2">
+                    <circle cx="0" cy="0" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-3" cy="2" r="8" fill="#0f1d40"/>
+                  </g>
+
+                  <!-- STEP 4: Explosive Malignant Proliferation & Engraftment in Peripheral Tissue -->
+                  <g id="cell-step4-peripheral-mass">
+                    <!-- Clustered Leukemic Blasts Mass -->
+                    <circle cx="-15" cy="-20" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-18" cy="-18" r="8" fill="#0f1d40"/>
+                    
+                    <circle cx="15" cy="-15" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="12" cy="-13" r="8" fill="#0f1d40"/>
+
+                    <circle cx="-20" cy="15" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-23" cy="17" r="8" fill="#0f1d40"/>
+
+                    <circle cx="10" cy="20" r="18" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="7" cy="22" r="8" fill="#0f1d40"/>
+
+                    <circle cx="0" cy="-2" r="19" fill="#f1f5f9" stroke="#0f1d40" stroke-width="3.5"/>
+                    <circle cx="-3" cy="0" r="8.5" fill="#0f1d40"/>
                   </g>
 
                 </g>
               </svg>
             </div>
 
-            <p class="text-xs text-gray-1000 leading-relaxed pt-1">
-              Studying the molecular, cellular, and microenvironmental factors driving early T-cell acute lymphoblastic leukemia (T-ALL) progression in pediatric populations.
+            <p class="text-xs text-gray-600 leading-relaxed pt-1">
+              Studying the molecular, cellular, and microenvironmental factors driving early T-cell progenitor transformation and T-cell acute lymphoblastic leukemia (T-ALL) progression in pediatric populations.
             </p>
           </div>
 
-          <!-- Mechanobiology & Biomaterials Card with Hydrogel Proliferation Animation -->
-          <div id="biophysics-biomaterials" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
+          <!-- Biophysics & Biomaterials Card -->
+          <div id="biophysics-biomaterials" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-4">
             <div class="border-b border-gray-100 pb-4">
               <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Mechanobiology & Biomaterials</span>
               <h2 class="text-lg font-bold text-gray-900 mt-2">Biophysics & Biomaterial Niche Engineering</h2>
             </div>
-
-            <!-- Vector Schematic Canvas with Hydrogel Proliferation Animation -->
-            <div class="relative w-full aspect-[16/9] bg-gray-50/50 rounded-lg border border-gray-200/80 flex items-center justify-center overflow-hidden">
-              <svg id="hydrogel-svg" viewBox="0 0 900 480" class="w-full h-full select-none hydrogel-animate">
-                <defs>
-                  <marker id="hydrogel-arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#01a7e1" />
-                  </marker>
-                </defs>
-                
-                <!-- BACKGROUND IPN HYDROGEL (Two Interwoven Networks using UBC Blues) -->
-                <!-- Network 1: Light Wavy Blue -->
-                <path d="M 100 80 C 150 50, 200 110, 250 80 C 300 50, 350 110, 400 80 C 450 50, 500 110, 550 80 C 600 50, 650 110, 700 80 C 750 50, 800 110, 850 80"
-                      fill="none" stroke="#e0f2fe" stroke-width="3" stroke-linecap="round"/>
-                <path d="M 100 220 C 150 190, 200 250, 250 220 C 300 190, 350 250, 400 220 C 450 190, 500 250, 550 220 C 600 190, 650 250, 700 220 C 750 190, 800 250, 850 220"
-                      fill="none" stroke="#e0f2fe" stroke-width="3" stroke-linecap="round"/>
-                <path d="M 100 360 C 150 330, 200 390, 250 360 C 300 330, 350 390, 400 360 C 450 330, 500 390, 550 360 C 600 330, 650 390, 700 360 C 750 330, 800 390, 850 360"
-                      fill="none" stroke="#e0f2fe" stroke-width="3" stroke-linecap="round"/>
-                <!-- Network 2: Vertical Soft Cyan Wavy -->
-                <path d="M 180 50 C 150 100, 210 150, 180 200 C 150 250, 210 300, 180 350 C 150 400, 210 450, 180 500"
-                      fill="none" stroke="#70c4e8" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M 380 50 C 350 100, 410 150, 380 200 C 350 250, 410 300, 380 350 C 350 400, 410 450, 380 500"
-                      fill="none" stroke="#70c4e8" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M 580 50 C 550 100, 610 150, 580 200 C 550 250, 610 300, 580 350 C 550 400, 610 450, 580 500"
-                      fill="none" stroke="#70c4e8" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M 780 50 C 750 100, 810 150, 780 200 C 750 250, 810 300, 780 350 C 750 400, 810 450, 780 500"
-                      fill="none" stroke="#70c4e8" stroke-width="2.5" stroke-linecap="round"/>
-
-                <!-- Seamless Animation Wrapper Group -->
-                <g id="hydrogel-svg-content">
-                  
-                  <!-- DYNAMIC INTERACTION LAYER -->
-                  <!-- Stage 1: Initial setup with few quiescent progenitor/CLP cells in IPN -->
-                  <g id="thymocyte-stage-1" style="animation: stageOne 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;">
-                    <circle cx="210" cy="180" r="16" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                    <circle cx="207" cy="182" r="7" fill="#0f1d40"/>
-                    <circle cx="680" cy="220" r="16" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                    <circle cx="677" cy="222" r="7" fill="#0f1d40"/>
-                    
-                    <text x="180" y="215" fill="#0f1d40" font-size="14" font-weight="700">developing thymocyte</text>
-                  </g>
-
-                  <!-- Stage 2: Activation, Aggregation and early division event -->
-                  <g id="thymocyte-stage-2" style="animation: stageTwo 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; opacity: 0;">
-                    <!-- Aggregating cells move to center -->
-                    <g transform="translate(450, 230)">
-                      <circle cx="-130" cy="-60" r="17" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-133" cy="-58" r="7.5" fill="#01a7e1"/>
-                      <circle cx="-110" cy="-45" r="17" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-113" cy="-43" r="7.5" fill="#01a7e1"/>
-                    </g>
-                    <!-- Signaling gradients (small dots/geometric ligands using UBC Cyan/Light Blue) -->
-                    <path d="M 400 200 C 430 180, 470 180, 500 200" stroke="#01a7e1" stroke-width="2" marker-end="url(#hydrogel-arrow-cyan)"/>
-                    <circle cx="430" cy="190" r="4" fill="#01a7e1"/>
-                    <circle cx="450" cy="185" r="4" fill="#01a7e1"/>
-                    <circle cx="470" cy="190" r="4" fill="#01a7e1"/>
-
-                    <text x="360" y="170" fill="#005ca7" font-size="14" font-weight="700">aggregating & proliferating</text>
-                  </g>
-
-                  <!-- Stage 3: Growing proliferating cluster -->
-                  <g id="thymocyte-stage-3" style="animation: stageThree 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; opacity: 0;">
-                    <!-- Dense cluster forming -->
-                    <g transform="translate(450, 230)">
-                      <circle cx="-20" cy="-20" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-23" cy="-18" r="8" fill="#01a7e1"/>
-                      <circle cx="15" cy="-15" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="12" cy="-13" r="8" fill="#01a7e1"/>
-                      <circle cx="-15" cy="10" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-18" cy="12" r="8" fill="#01a7e1"/>
-                      <circle cx="10" cy="20" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="7" cy="22" r="8" fill="#01a7e1"/>
-                      <circle cx="0" cy="-2" r="19" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-3" cy="0" r="8.5" fill="#01a7e1"/>
-                    </g>
-                    
-                    <text x="400" y="180" fill="#005ca7" font-size="14" font-weight="700">proliferating cluster</text>
-                  </g>
-
-                  <!-- Stage 4: Clustered proliferation continues with labeled dynamics -->
-                  <g id="thymocyte-stage-4" style="animation: stageFour 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; opacity: 0;">
-                    <!-- Even denser large cluster -->
-                    <g transform="translate(450, 230)">
-                      <circle cx="-30" cy="-30" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-33" cy="-28" r="8" fill="#01a7e1"/>
-                      <circle cx="0" cy="-35" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-3" cy="-33" r="8" fill="#01a7e1"/>
-                      <circle cx="30" cy="-30" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="27" cy="-28" r="8" fill="#01a7e1"/>
-                      <circle cx="-35" cy="0" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-38" cy="2" r="8" fill="#01a7e1"/>
-                      <circle cx="0" cy="0" r="19" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-3" cy="2" r="8.5" fill="#01a7e1"/>
-                      <circle cx="35" cy="0" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="32" cy="2" r="8" fill="#01a7e1"/>
-                      <circle cx="-30" cy="30" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-33" cy="32" r="8" fill="#01a7e1"/>
-                      <circle cx="0" cy="35" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="-3" cy="37" r="8" fill="#01a7e1"/>
-                      <circle cx="30" cy="30" r="18" fill="#e0f2fe" stroke="#01a7e1" stroke-width="3.5"/>
-                      <circle cx="27" cy="32" r="8" fill="#01a7e1"/>
-                    </g>
-                    <!-- Signaling factors (soft light blue spheres) with direction arrows towards the cluster center -->
-                    <path d="M 380 300 C 400 280, 420 270, 450 260" stroke="#70c4e8" stroke-width="2" marker-end="url(#hydrogel-arrow-cyan)"/>
-                    <circle cx="390" cy="290" r="5" fill="#70c4e8"/>
-                    <path d="M 520 160 C 500 180, 480 190, 450 200" stroke="#70c4e8" stroke-width="2" marker-end="url(#hydrogel-arrow-cyan)"/>
-                    <circle cx="510" cy="170" r="5" fill="#70c4e8"/>
-
-                    <text x="390" y="160" fill="#005ca7" font-size="14" font-weight="700">maturing, dense cluster</text>
-                  </g>
-                  
-                  <!-- Construct Label and direction arrow below, simplified from reference schematic labels -->
-                  <g id="hydrogel-construct-label" transform="translate(450, 430)">
-                    <text x="0" y="0" text-anchor="middle" fill="#0f1d40" font-size="16" font-weight="700">Thymus-Mimetic Hydrogel Niche</text>
-                    <path d="M 0 -15 L 0 -50" stroke="#0f1d40" stroke-width="2" marker-end="url(#bite-arrow)"/>
-                    <text x="0" y="-60" text-anchor="middle" fill="#005ca7" font-size="12" font-weight="600">Mechanokinetic cues</text>
-                  </g>
-
-                </g>
-              </svg>
-            </div>
-            
-            <p class="text-xs text-academic-muted leading-relaxed pt-1">
-              Developing thymus-mimetic interpenetrating network (IPN) hydrogel matrices using interwoven networks of synthetic polymers and natural extracellular matrix proteins to regulate human T-cell development.
-            </p>
-          </div>
-          
-          <div class="space-y-4 pt-4">
-            <h2 class="text-base font-bold text-academic-dark">Core Concepts</h2>
-            <p class="text-[15px] leading-relaxed text-academic-body">
-              Elucidating TCR mechanotransduction, force-amplified kinetic proofreading, and developing 3D hydrogel matrices to regulate human T-cell development.
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Elucidating TCR mechanotransduction, force-amplified kinetic proofreading, and developing thymus-mimetic 3D hydrogel matrices to regulate human progenitor T-cell differentiation and lineage specification.
             </p>
           </div>
 
@@ -893,7 +758,7 @@
       <section id="tab-publications" class="tab-content hidden space-y-8">
         <div>
           <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-1">Publications</h1>
-          <p class="text-sm text-academic-muted">Representative journal papers and preprints.</p>
+          <p class="text-sm text-gray-500">Representative journal papers and preprints.</p>
         </div>
 
         <div id="journals" class="space-y-6">
@@ -901,14 +766,14 @@
 
           <div class="space-y-6 text-sm">
             
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Kinetics of De Novo Bone and Bone Marrow Niche Formation With Hybrid Click Cryogels
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 Sangmin Lee, Kwasi Adu‐Berchie, Azeem Sanjay Sharda, Tania To, Nikolaos Dimitrakakis, Alexander Stafford, Katherine Sheehan, Christopher Johnson, Hamza Ijaz, Phoebe Kwon, Mark J Cartwright, Sandy Elmehrath, Mary Catherine Skolfield, <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Des White, Michael Williams, Michael Super, David T Scadden, David J Mooney
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Advanced Healthcare Materials, Vol. 15, 005821 (2026)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -916,14 +781,14 @@
               </div>
             </div>
             
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Human Progenitor T-Cell Differentiation Regulated by the Mechanical Resistance of Thymus-Mimetic Extracellular Matrices
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Kyle T Ruark, Joshua M Price, Ella M Serrano‐Wu, Blake Hanan, Andrew S Khalil, Wei‐Hung Jung, Nuria Lafuente‐Gómez, Christina M Tringides, Ann Gao, Joshua M Brockman, Andrew Lu, Izabela Zmirska, Kyle H Vining, Junzhe Lou, Kwasi Adu‐Berchie, Siyoon Kwon, Hamza Ijaz, Azeem Sharda, David T Scadden, David J Mooney
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Advanced Healthcare Materials, Vol. 15, e04316 (2026)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -931,14 +796,14 @@
               </div>
             </div>
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Mechanical forces amplify TCR mechanotransduction in T cell activation and function
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Joshua M. Brockman, Yunhao Zhai, Donald E. Ingber, David J. Mooney
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Applied Physics Reviews, Vol. 11, Issue 1, 011304 (2024)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -946,14 +811,14 @@
               </div>
             </div>
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Microporogen‐Structured Collagen Matrices for Embedded Bioprinting of Tumor Models for Immuno‐Oncology
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 Daniel S Reynolds, Irene de Lázaro, Manon L Blache, Yutong Liu, <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Ramsey M Doolittle, Estée Grandidier, Jason Olszewski, Mason T Dacus, David J Mooney, Jennifer A Lewis
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Advanced Materials, Vol. 35, Issue 33, 2210748 (2023)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -961,14 +826,14 @@
               </div>
             </div>
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Chemotherapy Dose Shapes the Expression of Immune-Interacting Markers on Cancer Cells
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 Alexander J Najibi, Kerry Larkin, Zhaoqianqi Feng, <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Mason T Dacus, Yashika Rustagi, F Stephen Hodi, David J Mooney
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Cellular and Molecular Bioengineering, Vol. 15, Issue 6, 535-551 (2022)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -976,14 +841,14 @@
               </div>
             </div>
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Viscoelastic biomaterials for tissue regeneration
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 David T Wu, <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Mani Diba, David J Mooney
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Tissue Engineering Part C: Methods, Vol. 28, Issue 7, 289-300 (2022)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -991,14 +856,14 @@
               </div>
             </div>
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Metabolically driven maturation of human-induced-pluripotent-stem-cell-derived cardiac microtissues on microfluidic chips
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 Nathaniel Huebsch, Berenice Charrez, Gabriel Neiman, Brian Siemons, Steven C Boggess, Samuel Wall, Verena Charwat, Karoline H Jæger, David Cleres, Åshild Telle, Felipe T Lee-Montiel, <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Nikhil Deveshwar, Andrew G Edwards, Jonathan Serrano, Matija Snuderl, Andreas Stahl, Aslak Tveito, Evan W Miller, Kevin E Healy
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Nature Biomedical Engineering, Vol. 6, Issue 4, 372-388 (2022)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -1006,14 +871,14 @@
               </div>
             </div>
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Risk quantification for SARS-CoV-2 infection through airborne transmission in university settings
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 Mythri Ambatipudi, Paola Carrillo Gonzalez, Kazi Tasnim, Jordan T Daigle, Taisa Kulyk, <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Nishant Sule, Rafael Trevino, Emily M He, David J Mooney, Esther Koh
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 Journal of Occupational and Environmental Hygiene, Vol. 18, Issue 12, 590-603 (2021)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -1029,14 +894,14 @@
 
           <div class="space-y-6 text-sm">
 
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-academic-lightGray transition-colors border border-transparent hover:border-academic-border">
-              <div class="font-semibold text-academic-dark text-[15px]">
+            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
+              <div class="font-semibold text-gray-900 text-[15px]">
                 Substrate mediated mechanical forces enable optimal proofreading by T cell receptors
               </div>
-              <div class="text-academic-body">
+              <div class="text-gray-700">
                 <span class="font-bold text-ubc-navy">Nicholas Jeffreys</span>, Joshua M. Brockman, Tiam Heydari, Bryan A. Nerger, Wei-Hung Jung, Peter W. Zandstra, L. Mahadevan, David J. Mooney, Suraj Shankar
               </div>
-              <div class="text-academic-muted italic text-xs">
+              <div class="text-gray-500 italic text-xs">
                 bioRxiv preprint (May 2026)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
@@ -1052,7 +917,7 @@
       <section id="tab-talks" class="tab-content hidden space-y-8">
         <div>
           <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-1">Talks & Presentations</h1>
-          <p class="text-sm text-academic-muted">Invited seminars and conference talks.</p>
+          <p class="text-sm text-gray-500">Invited seminars and conference talks.</p>
         </div>
 
         <!-- Invited Talks -->
@@ -1060,22 +925,22 @@
           <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Invited Talks</h2>
         
           <div class="space-y-4 text-sm">
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-academic-lightGray border border-transparent hover:border-academic-border">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
               <div>
-                <div class="font-semibold text-academic-dark">Immunoengineering CREATE Seminar Series</div>
-                <div class="text-academic-body">University of British Columbia</div>
+                <div class="font-semibold text-gray-900">Immunoengineering CREATE Seminar Series</div>
+                <div class="text-gray-600">University of British Columbia</div>
                 <div class="text-xs text-ubc-blue font-medium mt-1">Mechanical forces shape kinetic proofreading by the TCR</div>
               </div>
-              <div class="text-xs text-academic-muted font-mono mt-1 sm:mt-0">Jan 2025</div>
+              <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">Jan 2025</div>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-academic-lightGray border border-transparent hover:border-academic-border">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
               <div>
-                <div class="font-semibold text-academic-dark">Applied Math+ Graduate Seminar Series</div>
-                <div class="text-academic-body">Harvard University</div>
+                <div class="font-semibold text-gray-900">Applied Math+ Graduate Seminar Series</div>
+                <div class="text-gray-600">Harvard University</div>
                 <div class="text-xs text-ubc-blue font-medium mt-1">Mechanokinetic modeling of T cell receptor signaling for immunotherapy</div>
               </div>
-              <div class="text-xs text-academic-muted font-mono mt-1 sm:mt-0">Mar 2024</div>
+              <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">Mar 2024</div>
             </div>
           </div>
         </div>
@@ -1085,22 +950,22 @@
           <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Conference Talks</h2>
 
           <div class="space-y-4 text-sm">
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-academic-lightGray border border-transparent hover:border-academic-border">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
               <div>
-                <div class="font-semibold text-academic-dark">Canadian Society for Biomaterials and Pharmaceutical Sciences</div>
-                <div class="text-academic-body">Vancouver, BC</div>
+                <div class="font-semibold text-gray-900">Canadian Society for Biomaterials and Pharmaceutical Sciences</div>
+                <div class="text-gray-600">Vancouver, BC</div>
                 <div class="text-xs text-ubc-blue font-medium mt-1">Substrate mediated mechanical forces enable optimal proofreading by T cell receptors</div>
               </div>
-              <div class="text-xs text-academic-muted font-mono mt-1 sm:mt-0">May 2026</div>
+              <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">May 2026</div>
             </div>
 
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-academic-lightGray border border-transparent hover:border-academic-border">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
               <div>
-                <div class="font-semibold text-academic-dark">Biomedical Engineering Society (BMES) Annual Meeting</div>
-                <div class="text-academic-body">Seattle, WA</div>
+                <div class="font-semibold text-gray-900">Biomedical Engineering Society (BMES) Annual Meeting</div>
+                <div class="text-gray-600">Seattle, WA</div>
                 <div class="text-xs text-ubc-blue font-medium mt-1">Mechanical plasticity of notch1 and α4β1 integrin ligand functionalized interpenetrating network hydrogels regulates T-cell lineage specification and expansion from human hematopoietic stem cells</div>
               </div>
-              <div class="text-xs text-academic-muted font-mono mt-1 sm:mt-0">Oct 2023</div>
+              <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">Oct 2023</div>
             </div>
           </div>
         </div>
@@ -1110,17 +975,17 @@
       <section id="tab-teaching" class="tab-content hidden space-y-8">
         <div>
           <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-1">Teaching</h1>
-          <p class="text-sm text-academic-muted">Current and past course instruction and teaching fellowships.</p>
+          <p class="text-sm text-gray-500">Current and past course instruction and teaching fellowships.</p>
         </div>
 
         <div id="ubc" class="space-y-4">
           <h2 class="text-base font-bold text-ubc-navy border-b pb-2">UBC</h2>
 
           <div class="space-y-4 text-sm">
-            <div class="p-4 rounded-xl border border-academic-border bg-academic-lightGray space-y-2">
-              <h3 class="font-bold text-academic-dark">BMEG 580: Special Topics in Biomedical Engineering</h3>
-              <p class="text-xs text-academic-muted">Invited Guest Lecturer • Fall 2026</p>
-              <p class="text-xs text-academic-muted leading-relaxed">
+            <div class="p-4 rounded-xl border border-gray-100 bg-gray-50/60 space-y-2">
+              <h3 class="font-bold text-gray-900">BMEG 580: Special Topics in Biomedical Engineering</h3>
+              <p class="text-xs text-gray-500">Invited Guest Lecturer • Fall 2026</p>
+              <p class="text-xs text-gray-600 leading-relaxed">
                 Graduate-level course covering special topics in biomedical engineering. Guest lecturer on mechanobiology, mechanotransduction, and mechanomedicine.
               </p>
             </div>
@@ -1131,18 +996,18 @@
           <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Harvard University</h2>
 
           <div class="space-y-4 text-sm">
-            <div class="p-4 rounded-xl border border-academic-border bg-academic-lightGray space-y-2">
-              <h3 class="font-bold text-academic-dark">ENGSCI 125/230: Advanced Tissue Engineering</h3>
-              <p class="text-xs text-academic-muted">Teaching Fellow • Spring 2022</p>
-              <p class="text-xs text-academic-muted leading-relaxed">
+            <div class="p-4 rounded-xl border border-gray-100 bg-gray-50/60 space-y-2">
+              <h3 class="font-bold text-gray-900">ENGSCI 125/230: Advanced Tissue Engineering</h3>
+              <p class="text-xs text-gray-500">Teaching Fellow • Spring 2022</p>
+              <p class="text-xs text-gray-600 leading-relaxed">
                 Combined Undergraduate and Graduate-level course covering biomaterials, tissue engineering, immunoengineering, and regenerative medicine.
               </p>
             </div>
 
-            <div class="p-4 rounded-xl border border-academic-border bg-academic-lightGray space-y-2">
-              <h3 class="font-bold text-academic-dark">ENGSCI 96: Engineering Problem Solving and Design Project</h3>
-              <p class="text-xs text-academic-muted">Teaching Fellow • Fall 2020</p>
-              <p class="text-xs text-academic-muted leading-relaxed">
+            <div class="p-4 rounded-xl border border-gray-100 bg-gray-50/60 space-y-2">
+              <h3 class="font-bold text-gray-900">ENGSCI 96: Engineering Problem Solving and Design Project</h3>
+              <p class="text-xs text-gray-500">Teaching Fellow • Fall 2020</p>
+              <p class="text-xs text-gray-600 leading-relaxed">
                 Undergraduate-level capstone course covering engineering project design, problem solving, and communication.
               </p>
             </div>
@@ -1153,11 +1018,29 @@
     </div>
   </main>
 
-  <footer class="border-t border-gray-100 bg-white mt-12 py-6">
-    <div class="max-w-6xl mx-auto px-6 text-center text-xs text-academic-muted">
-      &copy; 2026 Nikko Jeffreys. Built with Tailwind CSS and Lucide. Flat vector animations on this site are schematic diagrams tailored to the UBC brand and avoid pink/purple/green.
+  <!-- BibTeX Modal -->
+  <div id="bibtex-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-gray-100 space-y-4">
+      <div class="flex justify-between items-center border-b pb-3">
+        <h3 class="font-bold text-ubc-navy text-sm">BibTeX Citation</h3>
+        <button onclick="closeBibtex()" class="p-1 text-gray-400 hover:text-black">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <textarea id="bibtex-code" readonly class="w-full h-44 font-mono text-xs p-3 bg-gray-50 border rounded-lg text-gray-800 focus:outline-none selection:bg-blue-200"></textarea>
+      <div class="flex justify-end space-x-3 text-xs">
+        <button onclick="copyBibtex()" class="px-4 py-2 bg-ubc-navy text-white rounded-lg hover:bg-ubc-blue transition flex items-center gap-1.5 font-medium">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy BibTeX
+        </button>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-ubc-navy text-white px-4 py-2.5 rounded-lg text-xs font-medium shadow-lg items-center gap-2">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-ubc-cyan"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
@@ -1212,6 +1095,46 @@
     function toggleSubmenu(id) {
       const el = document.getElementById(id);
       if (el) el.classList.toggle('hidden');
+    }
+
+    function toggleAbstract(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function openBibtex(id) {
+      const modal = document.getElementById('bibtex-modal');
+      const textarea = document.getElementById('bibtex-code');
+      if (modal && textarea) {
+        textarea.value = '';
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeBibtex() {
+      document.getElementById('bibtex-modal').classList.add('hidden');
+    }
+
+    function copyBibtex() {
+      const textarea = document.getElementById('bibtex-code');
+      textarea.select();
+      document.execCommand('copy');
+      showToast('BibTeX copied to clipboard!');
+      closeBibtex();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const msgEl = document.getElementById('toast-message');
+      if (toast && msgEl) {
+        msgEl.innerText = msg;
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 3000);
+      }
     }
 
     window.onload = function() {
