@@ -117,17 +117,17 @@
       100% { opacity: 1; }
     }
 
-    /* Cell movement adjusted so only TCR & TAA touch the BiTE construct */
+    /* Cell movement adjusted so receptors barely touch the BiTE construct */
     @keyframes animTCell {
-      0%, 35% { transform: translate(140px, 240px); }
-      52%, 80% { transform: translate(222px, 240px); }
-      88%, 100% { transform: translate(140px, 240px); }
+      0%, 35% { transform: translate(120px, 240px); }
+      52%, 80% { transform: translate(205px, 240px); }
+      88%, 100% { transform: translate(120px, 240px); }
     }
 
     @keyframes animTumorCell {
-      0%, 35% { transform: translate(760px, 240px); }
-      52%, 80% { transform: translate(678px, 240px); }
-      88%, 100% { transform: translate(760px, 240px); }
+      0%, 35% { transform: translate(780px, 240px); }
+      52%, 80% { transform: translate(675px, 240px); }
+      88%, 100% { transform: translate(780px, 240px); }
     }
 
     @keyframes animBite {
@@ -434,7 +434,7 @@
                 <g id="bite-svg-content">
                   
                   <!-- T CELL WITH NUCLEUS (LEFT - UBC BLUE / NAVY PALETTE) -->
-                  <g id="bite-t-cell-group" transform="translate(140, 240)">
+                  <g id="bite-t-cell-group" transform="translate(120, 240)">
                     <!-- T Cell Body & Nucleus -->
                     <circle cx="0" cy="0" r="110" fill="#e0f2fe" stroke="#005ca7" stroke-width="5" />
                     <circle cx="-35" cy="15" r="50" fill="#0f1d40" />
@@ -452,15 +452,10 @@
                     </g>
 
                     <text x="-60" y="-125" fill="#0f1d40" font-size="14" font-weight="700">Cytotoxic T Cell</text>
-                    
-                    <g transform="translate(-10, 32)">
-                      <path d="M -10 12 L 5 12" stroke="#0f1d40" stroke-width="2" marker-end="url(#bite-arrow)"/>
-                      <text x="12" y="16" fill="#0f1d40" font-size="12" font-weight="600">CD3 / TCR</text>
-                    </g>
                   </g>
 
                   <!-- TUMOR CELL WITH CLEAN NUCLEUS (RIGHT - UBC SLATE GRAY PALETTE) -->
-                  <g id="bite-tumor-cell-group" transform="translate(760, 240)">
+                  <g id="bite-tumor-cell-group" transform="translate(780, 240)">
                     <!-- Tumor Cell Body & Clean Nucleus -->
                     <circle cx="0" cy="0" r="110" fill="#f1f5f9" stroke="#64748b" stroke-width="5" />
                     <circle cx="35" cy="15" r="50" fill="#475569" />
@@ -469,11 +464,6 @@
                     <rect x="-148" y="-18" width="40" height="36" rx="14" fill="#64748b" stroke="#475569" stroke-width="2"/>
 
                     <text x="-40" y="-125" fill="#334155" font-size="14" font-weight="700">Tumor Cell</text>
-                    
-                    <g transform="translate(-10, 38)">
-                      <path d="M 20 12 L 10 12" stroke="#475569" stroke-width="2" marker-end="url(#bite-arrow-gray)"/>
-                      <text x="-40" y="15" fill="#475569" font-size="12" font-weight="600">TAA</text>
-                    </g>
                   </g>
 
                   <!-- BISPECIFIC T CELL ENGAGER (BiTE DOMAINS ACCURATELY STRUCTURED) -->
@@ -519,7 +509,6 @@
                     <path d="M 380 210 L 510 210" stroke="#0f1d40" stroke-width="2.5" stroke-linecap="round" marker-end="url(#bite-arrow)"/>
                     <path d="M 380 230 L 510 230" stroke="#005ca7" stroke-width="2.5" stroke-linecap="round" marker-end="url(#bite-arrow)"/>
                     <path d="M 380 250 L 510 250" stroke="#01a7e1" stroke-width="2.5" stroke-linecap="round" marker-end="url(#bite-arrow-cyan)"/>
-                    <text x="365" y="305" fill="#0f1d40" font-size="11" font-weight="700">Perforin / Granzyme Exocytosis</text>
                   </g>
 
                 </g>
