@@ -11,20 +11,27 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Custom Tailwind Configuration -->
+  <!-- Custom Tailwind Configuration with UBC Color Palette -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
+            ubc: {
+              navy: '#0f1d40',       /* UBC Deep Navy Blue */
+              blue: '#005ca7',       /* UBC Blue */
+              cyan: '#01a7e1',       /* UBC Cyan */
+              sky: '#44b4e4',        /* UBC Sky Blue */
+              light: '#70c4e8'       /* UBC Soft Light Blue */
+            },
             academic: {
-              link: '#2563eb',       /* Classic academic blue */
-              linkHover: '#1d4ed8',  /* Deep hover blue */
-              dark: '#1a1a1a',       /* Dark slate primary text */
-              body: '#333333',       /* Body text color */
-              muted: '#71717a',      /* Secondary muted gray */
-              lightGray: '#f4f4f5',  /* Soft gray accent background */
-              border: '#e4e4e7'      /* Subtle divider border */
+              link: '#005ca7',       /* UBC Blue for links */
+              linkHover: '#0f1d40',  /* Deep Navy hover */
+              dark: '#0f1d40',       /* Dark text / headings */
+              body: '#333333',
+              muted: '#71717a',
+              lightGray: '#f4f4f5',
+              border: '#e4e4e7'
             }
           },
           fontFamily: {
@@ -45,12 +52,12 @@
 
   <style>
     .academic-link {
-      color: #2563eb;
+      color: #005ca7;
       text-decoration: none;
       transition: color 0.15s ease-in-out;
     }
     .academic-link:hover {
-      color: #1d4ed8;
+      color: #0f1d40;
       text-decoration: underline;
     }
 
@@ -91,10 +98,10 @@
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <!-- Site Brand Name & Active Section Indicator -->
       <div class="flex items-center space-x-4">
-        <a href="#" onclick="switchTab('about')" class="text-lg tracking-wider font-bold uppercase text-academic-dark hover:opacity-80 transition-opacity">
+        <a href="#" onclick="switchTab('about')" class="text-lg tracking-wider font-bold uppercase text-ubc-navy hover:text-ubc-blue transition-colors">
           nikko jeffreys
         </a>
-        <span id="header-subtitle" class="text-base text-gray-400 font-normal">About</span>
+        <span id="header-subtitle" class="text-base text-ubc-blue font-semibold">About</span>
       </div>
 
       <!-- Action & Mobile Buttons -->
@@ -113,7 +120,7 @@
 
   <div id="mobile-drawer" class="hidden md:hidden fixed inset-0 z-40 bg-white flex flex-col p-6 overflow-y-auto transition-all">
     <div class="flex justify-between items-center mb-6 border-b pb-4">
-      <span class="font-bold text-lg uppercase tracking-wider text-academic-dark">Navigation</span>
+      <span class="font-bold text-lg uppercase tracking-wider text-ubc-navy">Navigation</span>
       <button onclick="toggleMobileMenu()" class="p-2 text-gray-600 hover:text-black">
         <i data-lucide="x" class="w-6 h-6"></i>
       </button>
@@ -121,7 +128,7 @@
     
     <nav class="space-y-4">
       <div>
-        <button onclick="switchTab('about'); toggleMobileMenu();" class="text-left w-full text-lg font-medium text-gray-800 py-1 hover:text-blue-600">About</button>
+        <button onclick="switchTab('about'); toggleMobileMenu();" class="text-left w-full text-lg font-semibold text-ubc-blue py-1">About</button>
       </div>
       <div>
         <button onclick="toggleSubmenu('mob-research-sub')" class="flex items-center justify-between w-full text-lg font-medium text-gray-800 py-1">
@@ -160,56 +167,56 @@
         
         <!-- About Link -->
         <div class="py-1">
-          <button onclick="switchTab('about')" class="w-full text-left font-medium text-gray-700 hover:text-black transition-colors">
+          <button onclick="switchTab('about')" class="w-full text-left font-bold text-ubc-blue hover:text-ubc-navy transition-colors">
             About
           </button>
         </div>
 
         <!-- Research Dropdown -->
         <div class="nav-group">
-          <button onclick="toggleSidebarMenu('nav-research-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-black transition-colors py-1">
+          <button onclick="toggleSidebarMenu('nav-research-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-ubc-navy transition-colors py-1">
             <span>Research</span>
             <i data-lucide="chevron-down" id="arrow-nav-research-items" class="w-3.5 h-3.5 text-gray-400 transition-transform duration-200"></i>
           </button>
           <div id="nav-research-items" class="submenu-transition max-h-0 pl-3 space-y-1.5 pt-1 text-sm">
-            <a href="#overview" onclick="switchTab('research')" class="block text-gray-500 hover:text-academic-link">Overview</a>
-            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-academic-link">Fluid-Structure Interaction</a>
+            <a href="#overview" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Overview</a>
+            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Fluid-Structure Interaction</a>
           </div>
         </div>
 
         <!-- Publications Dropdown -->
         <div class="nav-group">
-          <button onclick="toggleSidebarMenu('nav-pub-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-black transition-colors py-1">
+          <button onclick="toggleSidebarMenu('nav-pub-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-ubc-navy transition-colors py-1">
             <span>Publications</span>
             <i data-lucide="chevron-down" id="arrow-nav-pub-items" class="w-3.5 h-3.5 text-gray-400 transition-transform duration-200"></i>
           </button>
           <div id="nav-pub-items" class="submenu-transition max-h-0 pl-3 space-y-1.5 pt-1 text-sm">
-            <a href="#journals" onclick="switchTab('publications')" class="block text-gray-500 hover:text-academic-link">Journal Papers</a>
-            <a href="#preprints" onclick="switchTab('publications')" class="block text-gray-500 hover:text-academic-link">Preprints</a>
+            <a href="#journals" onclick="switchTab('publications')" class="block text-gray-500 hover:text-ubc-blue">Journal Papers</a>
+            <a href="#preprints" onclick="switchTab('publications')" class="block text-gray-500 hover:text-ubc-blue">Preprints</a>
           </div>
         </div>
 
         <!-- Talks Dropdown -->
         <div class="nav-group">
-          <button onclick="toggleSidebarMenu('nav-talks-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-black transition-colors py-1">
+          <button onclick="toggleSidebarMenu('nav-talks-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-ubc-navy transition-colors py-1">
             <span>Talks</span>
             <i data-lucide="chevron-down" id="arrow-nav-talks-items" class="w-3.5 h-3.5 text-gray-400 transition-transform duration-200"></i>
           </button>
           <div id="nav-talks-items" class="submenu-transition max-h-0 pl-3 space-y-1.5 pt-1 text-sm">
-            <a href="#invited" onclick="switchTab('talks')" class="block text-gray-500 hover:text-academic-link">Invited Talks</a>
-            <a href="#conferences" onclick="switchTab('talks')" class="block text-gray-500 hover:text-academic-link">Conference Talks</a>
+            <a href="#invited" onclick="switchTab('talks')" class="block text-gray-500 hover:text-ubc-blue">Invited Talks</a>
+            <a href="#conferences" onclick="switchTab('talks')" class="block text-gray-500 hover:text-ubc-blue">Conference Talks</a>
           </div>
         </div>
 
         <!-- Teaching Dropdown -->
         <div class="nav-group">
-          <button onclick="toggleSidebarMenu('nav-teaching-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-black transition-colors py-1">
+          <button onclick="toggleSidebarMenu('nav-teaching-items')" class="flex items-center justify-between w-full text-left text-gray-600 hover:text-ubc-navy transition-colors py-1">
             <span>Teaching</span>
             <i data-lucide="chevron-down" id="arrow-nav-teaching-items" class="w-3.5 h-3.5 text-gray-400 transition-transform duration-200"></i>
           </button>
           <div id="nav-teaching-items" class="submenu-transition max-h-0 pl-3 space-y-1.5 pt-1 text-sm">
-            <a href="#uw" onclick="switchTab('teaching')" class="block text-gray-500 hover:text-academic-link">UW-Madison</a>
-            <a href="#harvard" onclick="switchTab('teaching')" class="block text-gray-500 hover:text-academic-link">Harvard</a>
+            <a href="#uw" onclick="switchTab('teaching')" class="block text-gray-500 hover:text-ubc-blue">UW-Madison</a>
+            <a href="#harvard" onclick="switchTab('teaching')" class="block text-gray-500 hover:text-ubc-blue">Harvard</a>
           </div>
         </div>
 
@@ -226,36 +233,36 @@
           <!-- Left Main Bio Column -->
           <div class="lg:col-span-7 space-y-6">
             
-            <h1 class="text-xl font-bold tracking-tight text-academic-dark">Hello there!</h1>
+            <h1 class="text-xl font-bold tracking-tight text-ubc-navy">Hello there!</h1>
 
             <p class="text-[15px] leading-relaxed text-academic-body">
-              I am a postdoctoral research fellow in bioengineering at the University of British Columbia in <a href="https://www.stemcellbioengineering.ca/" target="_blank" class="academic-link">Prof. Peter Zandstra's</a> lab with a background in computational biophysics, biomaterials, synthetic biology, and immunoengineering. I received my PhD in Engineering Sciences from Harvard University in 2024, advised by 
-              <a href="https://mooneylab.seas.harvard.edu/" target="_blank" class="academic-link">Prof. Dave Mooney</a>. My current <a href="#" onclick="switchTab('research')" class="academic-link">research</a> focuses on the systems pharmacology of T cell engagers and understanding childhood T cell leukemogenesis.
+              I am a postdoctoral research fellow in bioengineering at the University of British Columbia in <a href="https://www.stemcellbioengineering.ca/" target="_blank" class="academic-link font-medium">Prof. Peter Zandstra's</a> lab with a background in computational biophysics, biomaterials, synthetic biology, and immunoengineering. I received my PhD in Engineering Sciences from Harvard University in 2024, advised by 
+              <a href="https://mooneylab.seas.harvard.edu/" target="_blank" class="academic-link font-medium">Prof. Dave Mooney</a>. My current <a href="#" onclick="switchTab('research')" class="academic-link font-medium">research</a> focuses on the systems pharmacology of T cell engagers and understanding childhood T cell leukemogenesis.
             </p>
 
             <p class="text-[15px] leading-relaxed text-academic-body">
               For more details on my work, please visit
-              <a href="#" onclick="switchTab('research')" class="academic-link">Research</a> and 
-              <a href="#" onclick="switchTab('publications')" class="academic-link">Publications</a>.
+              <a href="#" onclick="switchTab('research')" class="academic-link font-medium">Research</a> and 
+              <a href="#" onclick="switchTab('publications')" class="academic-link font-medium">Publications</a>.
             </p>
 
             <!-- Education Section -->
             <div class="pt-4 space-y-4">
-              <h2 class="text-base font-bold text-academic-dark">Education</h2>
+              <h2 class="text-base font-bold text-ubc-navy">Education</h2>
               
               <div class="space-y-3 text-[14px]">
                 <div>
-                  <div class="font-bold text-gray-900">PhD in Engineering Sciences (Bioengineering), 2019–2024</div>
+                  <div class="font-bold text-ubc-blue">PhD in Engineering Sciences (Bioengineering), 2019–2024</div>
                   <div class="text-gray-500">Harvard University, John A. Paulson School of Engineering and Applied Sciences and Wyss Institute</div>
                 </div>
 
                 <div>
-                  <div class="font-bold text-gray-900">SM in Engineering Sciences (Bioengineering), 2019–2021</div>
+                  <div class="font-bold text-ubc-blue">SM in Engineering Sciences (Bioengineering), 2019–2021</div>
                   <div class="text-gray-500">Harvard University, John A. Paulson School of Engineering and Applied Sciences and Wyss Institute</div>
                 </div>
 
                 <div>
-                  <div class="font-bold text-gray-900">BS in Bioengineering (Materials Science), 2016–2018</div>
+                  <div class="font-bold text-ubc-blue">BS in Bioengineering (Materials Science), 2016–2018</div>
                   <div class="text-gray-500">University of California, Berkeley</div>
                 </div>
               </div>
@@ -263,8 +270,8 @@
 
             <!-- Contact Section -->
             <div class="pt-4 space-y-2">
-              <h2 class="text-base font-bold text-academic-dark">Contact</h2>
-              <p class="text-[14px] text-academic-body font-mono bg-gray-50 inline-block px-2.5 py-1 rounded border border-gray-100">
+              <h2 class="text-base font-bold text-ubc-navy">Contact</h2>
+              <p class="text-[14px] text-ubc-navy font-mono bg-blue-50/60 inline-block px-2.5 py-1 rounded border border-blue-100">
                 nikko.jeffreys@ubc.ca
               </p>
             </div>
@@ -286,25 +293,25 @@
 
             <!-- Profile Info -->
             <div class="space-y-1">
-              <h2 class="text-lg font-bold text-academic-dark">nikko jeffreys</h2>
+              <h2 class="text-lg font-bold text-ubc-navy">nikko jeffreys</h2>
               <p class="text-[14px] text-gray-800">postdoctoral research fellow</p>
               <p class="text-[14px] text-gray-600">school of biomedical engineering and michael smith labs</p>
-              <p class="text-[14px] text-gray-600">university of british columbia</p>
+              <p class="text-[14px] text-ubc-blue font-semibold">university of british columbia</p>
               <p class="text-[14px] text-gray-600">vancouver, bc</p>
             </div>
 
             <!-- Dark Circular Social Icons Row -->
             <div class="flex items-center justify-center flex-wrap gap-2 pt-2">
-              <a href="https://scholar.google.com/citations?user=W1RBcUYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://scholar.google.com/citations?user=W1RBcUYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="w-8 h-8 rounded-full bg-ubc-navy text-white flex items-center justify-center hover:bg-ubc-blue transition-colors">
                 <span class="font-bold text-xs">G</span>
               </a>
-              <a href="https://github.com/nikkobioe" target="_blank" rel="noopener noreferrer" title="GitHub" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://github.com/nikkobioe" target="_blank" rel="noopener noreferrer" title="GitHub" class="w-8 h-8 rounded-full bg-ubc-navy text-white flex items-center justify-center hover:bg-ubc-blue transition-colors">
                 <i data-lucide="github" class="w-4 h-4"></i>
               </a>
-              <a href="https://www.linkedin.com/in/nikko-jeffreys/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://www.linkedin.com/in/nikko-jeffreys/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-8 h-8 rounded-full bg-ubc-navy text-white flex items-center justify-center hover:bg-ubc-blue transition-colors">
                 <i data-lucide="linkedin" class="w-4 h-4"></i>
               </a>
-              <a href="https://x.com/nikkommunology" target="_blank" rel="noopener noreferrer" title="X / Twitter" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+              <a href="https://x.com/nikkommunology" target="_blank" rel="noopener noreferrer" title="X / Twitter" class="w-8 h-8 rounded-full bg-ubc-navy text-white flex items-center justify-center hover:bg-ubc-blue transition-colors">
                 <i data-lucide="twitter" class="w-4 h-4"></i>
               </a>
             </div>
@@ -318,9 +325,9 @@
       <!-- ================= TAB 2: RESEARCH ================= -->
       <section id="tab-research" class="tab-content hidden space-y-8">
         <div>
-          <h1 class="text-xl font-bold tracking-tight text-academic-dark mb-2">Research Overview</h1>
+          <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-2">Research Overview</h1>
           <p class="text-[15px] text-academic-body leading-relaxed">
-            My research combines computational fluid dynamics, reference-map techniques, numerical linear algebra, and physical experiments to study complex fluid-structure interaction (FSI) systems.
+            My research combines computational biophysics, biomaterials, synthetic biology, and immunoengineering to study T cell pharmacology and leukemogenesis.
           </p>
         </div>
 
@@ -330,22 +337,22 @@
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               <div class="md:col-span-5 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg h-44 flex items-center justify-center border border-blue-100 relative overflow-hidden group">
                 <svg viewBox="0 0 200 120" class="w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-300">
-                  <path d="M 10 60 Q 50 10 100 60 T 190 60" stroke="#2563eb" stroke-width="3" fill="none"/>
-                  <path d="M 10 70 Q 50 20 100 70 T 190 70" stroke="#93c5fd" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
-                  <circle cx="100" cy="60" r="14" fill="#1e40af" />
-                  <circle cx="100" cy="60" r="22" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,3"/>
+                  <path d="M 10 60 Q 50 10 100 60 T 190 60" stroke="#005ca7" stroke-width="3" fill="none"/>
+                  <path d="M 10 70 Q 50 20 100 70 T 190 70" stroke="#01a7e1" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+                  <circle cx="100" cy="60" r="14" fill="#0f1d40" />
+                  <circle cx="100" cy="60" r="22" fill="none" stroke="#44b4e4" stroke-width="1.5" stroke-dasharray="3,3"/>
                 </svg>
-                <span class="absolute bottom-2 right-2 text-[11px] font-mono bg-white/90 px-2 py-0.5 rounded text-blue-900 shadow-sm">Reference Map Method</span>
+                <span class="absolute bottom-2 right-2 text-[11px] font-mono bg-white/90 px-2 py-0.5 rounded text-ubc-navy shadow-sm">Immunoengineering</span>
               </div>
               <div class="md:col-span-7 space-y-3">
-                <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">Fluid-Structure Interaction</span>
-                <h2 class="text-lg font-bold text-gray-900">Eulerian Simulation of Soft Solids in Fluid Streams</h2>
+                <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Systems Pharmacology</span>
+                <h2 class="text-lg font-bold text-gray-900">Systems Pharmacology of T Cell Engagers</h2>
                 <p class="text-sm text-gray-600 leading-relaxed">
-                  Developing fully Eulerian numerical frameworks to simulate large-deformation viscoelastic solids immersed in incompressible viscous flows, enabling precise modeling of biological valves and flexible structures.
+                  Investigating quantitative dynamics and biological parameters driving bispecific T cell engager function in pediatric leukemia and adoptive cell therapies.
                 </p>
                 <div class="flex items-center space-x-3 text-xs pt-1">
                   <a href="#" class="academic-link font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> PDF Paper</a>
-                  <a href="#" class="academic-link font-medium flex items-center gap-1"><i data-lucide="github" class="w-3.5 h-3.5"></i> Code Repository</a>
+                  <a href="https://github.com/nikkobioe" target="_blank" class="academic-link font-medium flex items-center gap-1"><i data-lucide="github" class="w-3.5 h-3.5"></i> Code Repository</a>
                 </div>
               </div>
             </div>
@@ -357,12 +364,12 @@
       <!-- ================= TAB 3: PUBLICATIONS ================= -->
       <section id="tab-publications" class="tab-content hidden space-y-8">
         <div>
-          <h1 class="text-xl font-bold tracking-tight text-academic-dark mb-1">Publications</h1>
+          <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-1">Publications</h1>
           <p class="text-sm text-gray-500">Representative journal papers, preprints, and conference proceedings.</p>
         </div>
 
         <div id="journals" class="space-y-6">
-          <h2 class="text-base font-bold text-gray-900 border-b pb-2">Journal Articles</h2>
+          <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Journal Articles</h2>
 
           <div class="space-y-6 text-sm">
             
@@ -371,39 +378,19 @@
                 A reference-map technique for two-phase fluid-structure interaction simulations
               </div>
               <div class="text-gray-700">
-                <span class="font-bold text-black">Nikko Jeffreys</span>, C. H. Rycroft
+                <span class="font-bold text-ubc-navy">Nikko Jeffreys</span>, C. H. Rycroft
               </div>
               <div class="text-gray-500 italic text-xs">
                 Journal of Computational Physics, Vol. 480, 112001 (2024)
               </div>
               <div class="flex items-center space-x-3 pt-1 text-xs">
                 <a href="#" class="academic-link font-medium">[PDF]</a>
-                <button onclick="toggleAbstract('abs-1')" class="text-gray-600 hover:text-black underline">[Abstract]</button>
-                <button onclick="openBibtex('bib-1')" class="text-gray-600 hover:text-black underline">[BibTeX]</button>
+                <button onclick="toggleAbstract('abs-1')" class="text-gray-600 hover:text-ubc-blue underline">[Abstract]</button>
+                <button onclick="openBibtex('bib-1')" class="text-gray-600 hover:text-ubc-blue underline">[BibTeX]</button>
                 <a href="#" class="academic-link font-medium">[Code]</a>
               </div>
               <div id="abs-1" class="hidden text-xs text-gray-600 bg-gray-50 p-3 rounded mt-2 border leading-relaxed">
-                We present a robust Eulerian numerical scheme utilizing the reference-map technique to model two-phase fluid-structure interaction problems involving large structural displacements and topological variations.
-              </div>
-            </div>
-
-            <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
-              <div class="font-semibold text-gray-900 text-[15px]">
-                Quantitative modeling of surfactant-driven pattern formation in physical systems
-              </div>
-              <div class="text-gray-700">
-                <span class="font-bold text-black">Nikko Jeffreys</span>, A. B. Scholar, C. H. Rycroft
-              </div>
-              <div class="text-gray-500 italic text-xs">
-                Physical Review Fluids, 8(9), 094002 (2023)
-              </div>
-              <div class="flex items-center space-x-3 pt-1 text-xs">
-                <a href="#" class="academic-link font-medium">[PDF]</a>
-                <button onclick="toggleAbstract('abs-2')" class="text-gray-600 hover:text-black underline">[Abstract]</button>
-                <button onclick="openBibtex('bib-2')" class="text-gray-600 hover:text-black underline">[BibTeX]</button>
-              </div>
-              <div id="abs-2" class="hidden text-xs text-gray-600 bg-gray-50 p-3 rounded mt-2 border leading-relaxed">
-                A mathematical model predicting Marangoni flow and surface fluid dynamics, validated against high-speed laboratory experiments.
+                We present a robust numerical scheme utilizing the reference-map technique to model multi-phase fluid-structure interaction problems.
               </div>
             </div>
 
@@ -411,7 +398,7 @@
         </div>
 
         <div id="preprints" class="space-y-6 pt-4">
-          <h2 class="text-base font-bold text-gray-900 border-b pb-2">Preprints</h2>
+          <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Preprints</h2>
 
           <div class="space-y-6 text-sm">
             <div class="space-y-1.5 p-4 rounded-lg hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
@@ -419,7 +406,7 @@
                 High-order numerical boundary treatment for elastic immersed boundaries
               </div>
               <div class="text-gray-700">
-                <span class="font-bold text-black">Nikko Jeffreys</span>, C. H. Rycroft
+                <span class="font-bold text-ubc-navy">Nikko Jeffreys</span>, C. H. Rycroft
               </div>
               <div class="text-gray-500 italic text-xs">
                 arXiv preprint arXiv:2403.12345 (2024)
@@ -436,45 +423,21 @@
       <!-- ================= TAB 4: TALKS ================= -->
       <section id="tab-talks" class="tab-content hidden space-y-8">
         <div>
-          <h1 class="text-xl font-bold tracking-tight text-academic-dark mb-1">Talks & Presentations</h1>
+          <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-1">Talks & Presentations</h1>
           <p class="text-sm text-gray-500">Invited seminars, conference talks, and workshop presentations.</p>
         </div>
 
         <div id="invited" class="space-y-4">
-          <h2 class="text-base font-bold text-gray-900 border-b pb-2">Invited Talks</h2>
+          <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Invited Talks</h2>
 
           <div class="space-y-4 text-sm">
             <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
               <div>
-                <div class="font-semibold text-gray-900">Applied Math Colloquium</div>
-                <div class="text-gray-600">University of Wisconsin–Madison, Department of Mathematics</div>
-                <div class="text-xs text-blue-600 font-medium mt-1">"Reference Map Method for Multiphysics Fluid-Structure Simulations"</div>
+                <div class="font-semibold text-gray-900">Bioengineering Seminar Series</div>
+                <div class="text-gray-600">University of British Columbia</div>
+                <div class="text-xs text-ubc-blue font-medium mt-1">"Quantitative Immunoengineering of T Cell Therapies"</div>
               </div>
               <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">Oct 2024</div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
-              <div>
-                <div class="font-semibold text-gray-900">Center for Scientific Computation Seminar</div>
-                <div class="text-gray-600">Harvard University, IACS</div>
-                <div class="text-xs text-blue-600 font-medium mt-1">"Mathematical Modeling of Interfacial Fluid Dynamics"</div>
-              </div>
-              <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">Feb 2024</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="conferences" class="space-y-4 pt-4">
-          <h2 class="text-base font-bold text-gray-900 border-b pb-2">Conference Presentations</h2>
-
-          <div class="space-y-4 text-sm">
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between p-3 rounded hover:bg-gray-50 border border-transparent hover:border-gray-100">
-              <div>
-                <div class="font-semibold text-gray-900">APS Division of Fluid Dynamics (DFD) Annual Meeting</div>
-                <div class="text-gray-600">Salt Lake City, UT</div>
-                <div class="text-xs text-blue-600 font-medium mt-1">"Eulerian grid methods for soft biological tissue motion"</div>
-              </div>
-              <div class="text-xs text-gray-400 font-mono mt-1 sm:mt-0">Nov 2023</div>
             </div>
           </div>
         </div>
@@ -483,31 +446,12 @@
       <!-- ================= TAB 5: TEACHING ================= -->
       <section id="tab-teaching" class="tab-content hidden space-y-8">
         <div>
-          <h1 class="text-xl font-bold tracking-tight text-academic-dark mb-1">Teaching</h1>
+          <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-1">Teaching</h1>
           <p class="text-sm text-gray-500">Current and past course instruction and teaching assistantships.</p>
         </div>
 
-        <div id="uw" class="space-y-4">
-          <h2 class="text-base font-bold text-gray-900 border-b pb-2">University of Wisconsin–Madison</h2>
-
-          <div class="space-y-4 text-sm">
-            <div class="p-4 rounded-xl border border-gray-100 bg-gray-50/60 space-y-2">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="font-bold text-gray-900">MATH 320: Linear Algebra and Differential Equations</h3>
-                  <p class="text-xs text-gray-500">Instructor of Record • Fall 2024</p>
-                </div>
-                <span class="text-xs bg-blue-100 text-blue-800 font-semibold px-2.5 py-0.5 rounded">Active</span>
-              </div>
-              <p class="text-xs text-gray-600 leading-relaxed">
-                Introduction to linear algebra, systems of linear differential equations, matrix methods, and numerical application algorithms.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div id="harvard" class="space-y-4 pt-4">
-          <h2 class="text-base font-bold text-gray-900 border-b pb-2">Harvard University</h2>
+        <div id="harvard" class="space-y-4">
+          <h2 class="text-base font-bold text-ubc-navy border-b pb-2">Harvard University</h2>
 
           <div class="space-y-4 text-sm">
             <div class="p-4 rounded-xl border border-gray-100 bg-gray-50/60 space-y-2">
@@ -528,14 +472,14 @@
   <div id="bibtex-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
     <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-gray-100 space-y-4">
       <div class="flex justify-between items-center border-b pb-3">
-        <h3 class="font-bold text-gray-900 text-sm">BibTeX Citation</h3>
+        <h3 class="font-bold text-ubc-navy text-sm">BibTeX Citation</h3>
         <button onclick="closeBibtex()" class="p-1 text-gray-400 hover:text-black">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
       <textarea id="bibtex-code" readonly class="w-full h-44 font-mono text-xs p-3 bg-gray-50 border rounded-lg text-gray-800 focus:outline-none selection:bg-blue-200"></textarea>
       <div class="flex justify-end space-x-3 text-xs">
-        <button onclick="copyBibtex()" class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition flex items-center gap-1.5 font-medium">
+        <button onclick="copyBibtex()" class="px-4 py-2 bg-ubc-navy text-white rounded-lg hover:bg-ubc-blue transition flex items-center gap-1.5 font-medium">
           <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy BibTeX
         </button>
       </div>
@@ -547,8 +491,8 @@
     <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-gray-100 space-y-5 max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-center border-b pb-3">
         <div class="flex items-center space-x-2">
-          <i data-lucide="github" class="w-5 h-5 text-black"></i>
-          <h3 class="font-bold text-gray-900 text-base">Customize & Deploy on GitHub Pages</h3>
+          <i data-lucide="github" class="w-5 h-5 text-ubc-navy"></i>
+          <h3 class="font-bold text-ubc-navy text-base">Customize & Deploy on GitHub Pages</h3>
         </div>
         <button onclick="closeCustomizeModal()" class="p-1 text-gray-400 hover:text-black">
           <i data-lucide="x" class="w-5 h-5"></i>
@@ -556,30 +500,25 @@
       </div>
 
       <div class="space-y-4 text-xs leading-relaxed text-gray-700">
-        <p>This template is built as a self-contained single HTML file, styled precisely after <strong class="text-black">sun-yue.com</strong>. Here is how you can personalize it:</p>
+        <p>This template is built as a self-contained single HTML file styled in the UBC academic color scheme. Personalize it easily:</p>
         
         <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-2">
-          <h4 class="font-bold text-gray-900 text-sm">Step 1: Edit Profile Content</h4>
-          <p>Search for <code class="bg-gray-200 px-1 py-0.5 rounded text-black">Nikko Jeffreys</code> in <code class="bg-gray-200 px-1 py-0.5 rounded text-black">index.html</code> and replace it with your own name, title, bio, education, and contact email.</p>
+          <h4 class="font-bold text-ubc-navy text-sm">Step 1: Edit Profile Content</h4>
+          <p>Search for <code class="bg-gray-200 px-1 py-0.5 rounded text-black">Nikko Jeffreys</code> in <code class="bg-gray-200 px-1 py-0.5 rounded text-black">index.html</code> to adjust your title, bio, education, or contact details.</p>
         </div>
 
         <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-2">
-          <h4 class="font-bold text-gray-900 text-sm">Step 2: Add Publications & Research</h4>
-          <p>Update the articles under <code class="bg-gray-200 px-1 py-0.5 rounded text-black">#tab-publications</code> and <code class="bg-gray-200 px-1 py-0.5 rounded text-black">#tab-research</code> with your own PDF links, abstracts, and BibTeX entries.</p>
-        </div>
-
-        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 space-y-2">
-          <h4 class="font-bold text-gray-900 text-sm">Step 3: Host Free on GitHub Pages</h4>
+          <h4 class="font-bold text-ubc-navy text-sm">Step 2: Host Free on GitHub Pages</h4>
           <ol class="list-decimal pl-4 space-y-1">
-            <li>Create a new public repository on GitHub named <code class="bg-gray-200 px-1 py-0.5 rounded text-black">yourusername.github.io</code>.</li>
-            <li>Upload this <code class="bg-gray-200 px-1 py-0.5 rounded text-black">index.html</code> file to the root of your repository.</li>
-            <li>Go to <strong>Settings -> Pages</strong>, set the source branch to <strong>main</strong>, and click Save!</li>
+            <li>Create a repository named <code class="bg-gray-200 px-1 py-0.5 rounded text-black">nikkobioe.github.io</code>.</li>
+            <li>Upload this <code class="bg-gray-200 px-1 py-0.5 rounded text-black">index.html</code> file to the root directory.</li>
+            <li>Enable GitHub Pages under Repository Settings -> Pages.</li>
           </ol>
         </div>
       </div>
 
       <div class="flex justify-end pt-2">
-        <button onclick="closeCustomizeModal()" class="px-5 py-2 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition text-xs">
+        <button onclick="closeCustomizeModal()" class="px-5 py-2 bg-ubc-navy text-white font-semibold rounded-lg hover:bg-ubc-blue transition text-xs">
           Got It!
         </button>
       </div>
@@ -587,8 +526,8 @@
   </div>
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-black text-white px-4 py-2.5 rounded-lg text-xs font-medium shadow-lg items-center gap-2">
-    <i data-lucide="check-circle-2" class="w-4 h-4 text-green-400"></i>
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-ubc-navy text-white px-4 py-2.5 rounded-lg text-xs font-medium shadow-lg items-center gap-2">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-ubc-cyan"></i>
     <span id="toast-message">Copied to clipboard!</span>
   </div>
 
@@ -653,23 +592,13 @@
     }
 
     const bibtexEntries = {
-      'bib-1': `@article{sun2024reference,
+      'bib-1': `@article{jeffreys2024reference,
   title={A reference-map technique for two-phase fluid-structure interaction simulations},
-  author={Sun, Yue and Rycroft, Chris H},
+  author={Jeffreys, Nikko and Rycroft, Chris H},
   journal={Journal of Computational Physics},
   volume={480},
   pages={112001},
-  year={2024},
-  publisher={Elsevier}
-}`,
-      'bib-2': `@article{sun2023modeling,
-  title={Quantitative modeling of surfactant-driven pattern formation in physical systems},
-  author={Sun, Yue and Scholar, A. B. and Rycroft, Chris H},
-  journal={Physical Review Fluids},
-  volume={8},
-  number={9},
-  pages={094002},
-  year={2023}
+  year={2024}
 }`
     };
 
