@@ -103,9 +103,6 @@
     .bite-animate #bite-molecule {
       animation: animBite 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
-    .bite-animate #bite-curved-arrow {
-      animation: animArrow 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
     .bite-animate #bite-synapse-line {
       animation: animSynapse 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
@@ -120,16 +117,17 @@
       100% { opacity: 1; }
     }
 
+    /* Cell movement adjusted so only TCR & TAA touch the BiTE construct */
     @keyframes animTCell {
-      0%, 35% { transform: translate(170px, 240px); }
-      52%, 80% { transform: translate(270px, 240px); }
-      88%, 100% { transform: translate(170px, 240px); }
+      0%, 35% { transform: translate(140px, 240px); }
+      52%, 80% { transform: translate(222px, 240px); }
+      88%, 100% { transform: translate(140px, 240px); }
     }
 
     @keyframes animTumorCell {
-      0%, 35% { transform: translate(730px, 240px); }
-      52%, 80% { transform: translate(630px, 240px); }
-      88%, 100% { transform: translate(730px, 240px); }
+      0%, 35% { transform: translate(760px, 240px); }
+      52%, 80% { transform: translate(678px, 240px); }
+      88%, 100% { transform: translate(760px, 240px); }
     }
 
     @keyframes animBite {
@@ -137,12 +135,6 @@
       18% { transform: translate(450px, 110px); }
       32%, 80% { transform: translate(450px, 240px); }
       88%, 100% { transform: translate(450px, 75px); }
-    }
-
-    @keyframes animArrow {
-      0%, 18% { opacity: 0; }
-      25%, 45% { opacity: 0.85; }
-      52%, 100% { opacity: 0; }
     }
 
     @keyframes animSynapse {
@@ -442,21 +434,21 @@
                 <g id="bite-svg-content">
                   
                   <!-- T CELL WITH NUCLEUS (LEFT - UBC BLUE / NAVY PALETTE) -->
-                  <g id="bite-t-cell-group" transform="translate(170, 240)">
+                  <g id="bite-t-cell-group" transform="translate(140, 240)">
                     <!-- T Cell Body & Nucleus -->
                     <circle cx="0" cy="0" r="110" fill="#e0f2fe" stroke="#005ca7" stroke-width="5" />
                     <circle cx="-35" cy="15" r="50" fill="#0f1d40" />
 
-                    <!-- Receptors (CD3 Subunits in UBC Navy & Cyan TCR Stalk) -->
-                    <g>
-                      <!-- CD3 Pill Subunits (UBC Navy) -->
-                      <rect x="92" y="-35" width="12" height="32" rx="6" fill="#0f1d40" transform="rotate(15, 98, -20)"/>
-                      <rect x="88" y="-10" width="12" height="32" rx="6" fill="#0f1d40" transform="rotate(15, 94, 5)"/>
-                      <rect x="102" y="-5" width="12" height="32" rx="6" fill="#0f1d40" transform="rotate(15, 108, 10)"/>
-                      <rect x="98" y="20" width="12" height="32" rx="6" fill="#0f1d40" transform="rotate(15, 104, 35)"/>
+                    <!-- ENLARGED TCR-CD3 RECEPTOR COMPLEX -->
+                    <g transform="translate(15, 0)">
+                      <!-- Enlarged CD3 Pill Subunits (UBC Navy) -->
+                      <rect x="80" y="-46" width="16" height="42" rx="8" fill="#0f1d40" transform="rotate(15, 88, -25)"/>
+                      <rect x="75" y="-12" width="16" height="42" rx="8" fill="#0f1d40" transform="rotate(15, 83, 9)"/>
+                      <rect x="94" y="-5" width="16" height="42" rx="8" fill="#0f1d40" transform="rotate(15, 102, 16)"/>
+                      <rect x="89" y="28" width="16" height="42" rx="8" fill="#0f1d40" transform="rotate(15, 97, 49)"/>
                       
-                      <!-- TCR Stalk (UBC Cyan) -->
-                      <path d="M 98 -5 L 125 -12 M 125 -12 L 142 -25 M 125 -12 L 142 0" stroke="#01a7e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      <!-- Extended Enlarged TCR Stalk (UBC Cyan) reaching out to BiTE -->
+                      <path d="M 85 -5 L 122 -10 M 122 -10 L 153 -30 M 122 -10 L 153 10" stroke="#01a7e1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                     </g>
 
                     <text x="-60" y="-125" fill="#0f1d40" font-size="14" font-weight="700">Cytotoxic T Cell</text>
@@ -467,14 +459,14 @@
                     </g>
                   </g>
 
-                  <!-- TUMOR CELL WITH NUCLEUS (RIGHT - UBC SLATE GRAY PALETTE) -->
-                  <g id="bite-tumor-cell-group" transform="translate(730, 240)">
-                    <!-- Tumor Cell Body & Nucleus -->
+                  <!-- TUMOR CELL WITH CLEAN NUCLEUS (RIGHT - UBC SLATE GRAY PALETTE) -->
+                  <g id="bite-tumor-cell-group" transform="translate(760, 240)">
+                    <!-- Tumor Cell Body & Clean Nucleus -->
                     <circle cx="0" cy="0" r="110" fill="#f1f5f9" stroke="#64748b" stroke-width="5" />
                     <circle cx="35" cy="15" r="50" fill="#475569" />
 
-                    <!-- TAA Surface Antigen Stub -->
-                    <ellipse cx="-112" cy="0" rx="18" ry="10" fill="#64748b" transform="rotate(-10, -112, 0)"/>
+                    <!-- ENLARGED TAA SURFACE ANTIGEN RECEPTOR STUB -->
+                    <rect x="-148" y="-18" width="40" height="36" rx="14" fill="#64748b" stroke="#475569" stroke-width="2"/>
 
                     <text x="-40" y="-125" fill="#334155" font-size="14" font-weight="700">Tumor Cell</text>
                     
@@ -483,9 +475,6 @@
                       <text x="-40" y="15" fill="#475569" font-size="12" font-weight="600">TAA</text>
                     </g>
                   </g>
-
-                  <!-- CURVED ENGAGEMENT ARROW -->
-                  <path id="bite-curved-arrow" d="M 320 360 C 420 420, 580 420, 670 330" fill="none" stroke="#005ca7" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#bite-arrow)"/>
 
                   <!-- BISPECIFIC T CELL ENGAGER (BiTE DOMAINS ACCURATELY STRUCTURED) -->
                   <g id="bite-molecule" transform="translate(450, 75)">
