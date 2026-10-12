@@ -218,6 +218,44 @@
       85% { transform: translate(780px, 240px) scale(1.25); opacity: 1; }
       90%, 100% { transform: translate(780px, 240px) scale(1); opacity: 0; }
     }
+
+    /* 3D Hydrogel Proliferation & Receptor-Ligand Animation Keyframes */
+    .hydrogel-animate #hydrogel-svg-content {
+      animation: animFadeLoop 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .hydrogel-animate #hydrogel-single-cell {
+      animation: animHydrogelSingle 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .hydrogel-animate #hydrogel-dividing-cells {
+      animation: animHydrogelDivide 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .hydrogel-animate #hydrogel-cluster-cells {
+      animation: animHydrogelCluster 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes animHydrogelSingle {
+      0% { transform: scale(0.7); opacity: 0; }
+      4% { transform: scale(1); opacity: 1; }
+      20% { transform: scale(1.08); opacity: 1; }
+      25%, 100% { transform: scale(0.8); opacity: 0; }
+    }
+
+    @keyframes animHydrogelDivide {
+      0%, 25% { transform: scale(0.8); opacity: 0; }
+      29% { transform: scale(1); opacity: 1; }
+      48% { transform: scale(1.05); opacity: 1; }
+      54%, 100% { transform: scale(0.8); opacity: 0; }
+    }
+
+    @keyframes animHydrogelCluster {
+      0%, 54% { transform: scale(0.85); opacity: 0; }
+      59% { transform: scale(1); opacity: 1; }
+      82% { transform: scale(1); opacity: 1; }
+      88%, 100% { transform: scale(0.9); opacity: 0; }
+    }
   </style>
 </head>
 
@@ -740,14 +778,165 @@
             </p>
           </div>
 
-          <!-- Biophysics & Biomaterials Card -->
-          <div id="biophysics-biomaterials" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-4">
+          <!-- Mechanobiology & Biomaterials Card with 3D Hydrogel Proliferation Animation -->
+          <div id="biophysics-biomaterials" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
             <div class="border-b border-gray-100 pb-4">
               <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Mechanobiology & Biomaterials</span>
               <h2 class="text-lg font-bold text-gray-900 mt-2">Biophysics & Biomaterial Niche Engineering</h2>
             </div>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              Elucidating TCR mechanotransduction, force-amplified kinetic proofreading, and developing thymus-mimetic 3D hydrogel matrices to regulate human progenitor T-cell differentiation and lineage specification.
+
+            <!-- Vector Schematic Canvas with 3D Hydrogel Thymocyte Proliferation & Receptor-Ligand Interactions -->
+            <div class="relative w-full aspect-[16/9] bg-gray-50/50 rounded-lg border border-gray-200/80 flex items-center justify-center overflow-hidden">
+              <svg id="hydrogel-svg" viewBox="0 0 900 480" class="w-full h-full select-none hydrogel-animate">
+                <defs>
+                  <marker id="hydrogel-arrow-navy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f1d40" />
+                  </marker>
+                </defs>
+
+                <!-- 1. BACKGROUND 3D HYDROGEL POLYMER MESH (UBC BLUES & GRAYS) -->
+                <g id="hydrogel-polymer-mesh">
+                  <!-- Wavy Main Hydrogel Fibers -->
+                  <path d="M 40 110 C 180 50, 320 180, 480 90 C 640 0, 760 160, 860 100" fill="none" stroke="#70c4e8" stroke-width="4.5" opacity="0.65" stroke-linecap="round"/>
+                  <path d="M 30 240 C 200 170, 310 320, 450 220 C 590 120, 710 290, 870 210" fill="none" stroke="#005ca7" stroke-width="3.5" opacity="0.45" stroke-linecap="round"/>
+                  <path d="M 50 380 C 190 310, 350 430, 490 340 C 630 250, 750 410, 850 360" fill="none" stroke="#01a7e1" stroke-width="4" opacity="0.55" stroke-linecap="round"/>
+                  
+                  <!-- Transverse Intersecting Gel Network Fibers -->
+                  <path d="M 160 40 C 110 160, 220 280, 150 420" fill="none" stroke="#44b4e4" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+                  <path d="M 420 30 C 370 170, 480 300, 410 440" fill="none" stroke="#0f1d40" stroke-width="2.5" opacity="0.3" stroke-linecap="round"/>
+                  <path d="M 720 40 C 670 180, 780 290, 710 430" fill="none" stroke="#005ca7" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
+
+                  <!-- Polymer Matrix Crosslink Nodes -->
+                  <circle cx="178" cy="115" r="5" fill="#0f1d40"/>
+                  <circle cx="445" cy="225" r="5" fill="#0f1d40"/>
+                  <circle cx="738" cy="142" r="5" fill="#0f1d40"/>
+                  <circle cx="215" cy="365" r="5" fill="#0f1d40"/>
+                  <circle cx="692" cy="350" r="5" fill="#0f1d40"/>
+                </g>
+
+                <!-- 2. MATRIX-TETHERED LIGANDS ANCHORED ALONG HYDROGEL FIBERS -->
+                <g id="hydrogel-tethered-ligands">
+                  <!-- Tethered Notch Ligands (DLL4 - Cyan Caps on Dark Stems) -->
+                  <g transform="translate(180, 115)">
+                    <line x1="0" y1="0" x2="22" y2="-20" stroke="#0f1d40" stroke-width="2.5"/>
+                    <rect x="20" y="-28" width="16" height="10" rx="3" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(445, 225)">
+                    <line x1="0" y1="0" x2="-25" y2="-15" stroke="#0f1d40" stroke-width="2.5"/>
+                    <rect x="-39" y="-22" width="16" height="10" rx="3" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(692, 350)">
+                    <line x1="0" y1="0" x2="20" y2="20" stroke="#0f1d40" stroke-width="2.5"/>
+                    <rect x="18" y="18" width="16" height="10" rx="3" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <!-- Matrix Integrin Ligand Motifs (VCAM-1 / RGDS - Navy Caps) -->
+                  <g transform="translate(215, 365)">
+                    <line x1="0" y1="0" x2="20" y2="-22" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="28" cy="-28" r="7" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(738, 142)">
+                    <line x1="0" y1="0" x2="-22" y2="18" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="-28" cy="23" r="7" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                  </g>
+
+                  <!-- Soluble Cytokines & Growth Factors Floating in Hydrogel Pores -->
+                  <circle cx="110" cy="220" r="5" fill="#44b4e4" opacity="0.8"/>
+                  <circle cx="340" cy="140" r="6" fill="#70c4e8" opacity="0.8"/>
+                  <circle cx="580" cy="380" r="5" fill="#01a7e1" opacity="0.8"/>
+                  <circle cx="810" cy="270" r="6" fill="#44b4e4" opacity="0.8"/>
+                </g>
+
+                <!-- 3. ANIMATED DYNAMIC THYMOCYTE PROLIFERATION STAGES -->
+                <g id="hydrogel-svg-content">
+
+                  <!-- STAGE A: Single Progenitor Thymocyte Binding Hydrogel Matrix (0s - 3.5s) -->
+                  <g id="hydrogel-single-cell" transform="translate(450, 230)">
+                    <!-- Single Thymocyte Cell Body & Nucleus -->
+                    <circle cx="0" cy="0" r="52" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
+                    <circle cx="-12" cy="10" r="22" fill="#0f1d40"/>
+
+                    <!-- Membrane Notch Receptors Binding Matrix DLL4 -->
+                    <path d="M -35 -35 L -60 -50" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M 38 -30 L 60 -42" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+
+                    <text x="0" y="85" text-anchor="middle" fill="#0f1d40" font-size="14" font-weight="700">Progenitor Thymocyte in 3D Hydrogel</text>
+                  </g>
+
+                  <!-- STAGE B: Mitotic Division / Progenitor Splitting (3.5s - 7.5s) -->
+                  <g id="hydrogel-dividing-cells" transform="translate(450, 230)">
+                    <!-- Daughter Cell 1 (Left) -->
+                    <g transform="translate(-55, -20)">
+                      <circle cx="0" cy="0" r="46" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="-10" cy="8" r="19" fill="#0f1d40"/>
+                      <!-- Notch Receptors -->
+                      <path d="M -25 -32 L -45 -45" stroke="#01a7e1" stroke-width="3" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Daughter Cell 2 (Right) -->
+                    <g transform="translate(55, 20)">
+                      <circle cx="0" cy="0" r="46" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="10" cy="-8" r="19" fill="#0f1d40"/>
+                      <!-- Integrin Receptors -->
+                      <path d="M 28 28 L 48 42" stroke="#005ca7" stroke-width="3" stroke-linecap="round"/>
+                    </g>
+
+                    <text x="0" y="105" text-anchor="middle" fill="#005ca7" font-size="14" font-weight="700">Mechanosensitive Proliferation</text>
+                  </g>
+
+                  <!-- STAGE C: Multicellular Proliferating Thymocyte Cluster in 3D Matrix (7.5s - 14s) -->
+                  <!-- Layout directly inspired by image_5fa175.png with full receptor-ligand mesh contacts -->
+                  <g id="hydrogel-cluster-cells" transform="translate(450, 230)">
+
+                    <!-- Cluster Cell 1: Top-Left -->
+                    <g transform="translate(-110, -70)">
+                      <circle cx="0" cy="0" r="48" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="-10" cy="-8" r="20" fill="#0f1d40"/>
+                      <!-- Receptors engages matrix fiber -->
+                      <path d="M -30 -30 L -48 -45" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M -15 38 L -28 52" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Cluster Cell 2: Top-Right -->
+                    <g transform="translate(110, -60)">
+                      <circle cx="0" cy="0" r="50" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="12" cy="-10" r="21" fill="#0f1d40"/>
+                      <!-- Receptors engages matrix fiber -->
+                      <path d="M 25 -35 L 42 -52" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M -38 -25 L -55 -38" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Cluster Cell 3: Bottom-Left -->
+                    <g transform="translate(-80, 75)">
+                      <circle cx="0" cy="0" r="52" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="-12" cy="10" r="22" fill="#0f1d40"/>
+                      <!-- Receptors engages matrix fiber -->
+                      <path d="M -35 32 L -52 48" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M 38 28 L 55 42" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Cluster Cell 4: Bottom-Right -->
+                    <g transform="translate(120, 65)">
+                      <circle cx="0" cy="0" r="46" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="10" cy="8" r="19" fill="#0f1d40"/>
+                      <!-- Receptors engages matrix fiber -->
+                      <path d="M 32 -28 L 48 -42" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+                      <path d="M 28 32 L 45 48" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Center Label inside SVG canvas -->
+                    <text x="0" y="165" text-anchor="middle" fill="#0f1d40" font-size="15" font-weight="700">3D Thymic Proliferating Cluster & Niche Signaling</text>
+                  </g>
+
+                </g>
+              </svg>
+            </div>
+
+            <p class="text-xs text-gray-600 leading-relaxed pt-1">
+              Elucidating TCR mechanotransduction, force-amplified kinetic proofreading, and developing thymus-mimetic 3D interpenetrating network (IPN) hydrogel matrices with tethered Notch ligands and integrin motifs to regulate human progenitor T-cell differentiation, receptor-ligand mechanosensing, and cluster proliferation.
             </p>
           </div>
 
