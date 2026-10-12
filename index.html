@@ -181,11 +181,10 @@
           <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </button>
         <div id="mob-research-sub" class="pl-4 mt-2 space-y-2 border-l-2 border-gray-100">
-          <a href="#" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Overview</a>
-          <a href="#" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">T cell engagers</a>
-          <a href="#" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Childhood leukemogenesis</a>
-          <a href="#" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Computational modeling</a>
-          <a href="#" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Biomaterials</a>
+          <a href="#overview" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Overview</a>
+          <a href="#tcell-engagers" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">T cell Engagers</a>
+          <a href="#childhood-leukemogenesis" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Childhood Leukemogenesis</a>
+          <a href="#biophysics-biomaterials" onclick="switchTab('research'); toggleMobileMenu();" class="block text-sm text-gray-600">Biophysics & Biomaterials</a>
         </div>
       </div>
       <div>
@@ -228,7 +227,9 @@
           </button>
           <div id="nav-research-items" class="submenu-transition max-h-0 pl-3 space-y-1.5 pt-1 text-sm">
             <a href="#overview" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Overview</a>
-            <a href="#fsi" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Fluid-Structure Interaction</a>
+            <a href="#tcell-engagers" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">T cell Engagers</a>
+            <a href="#childhood-leukemogenesis" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Childhood Leukemogenesis</a>
+            <a href="#biophysics-biomaterials" onclick="switchTab('research')" class="block text-gray-500 hover:text-ubc-blue">Biophysics & Biomaterials</a>
           </div>
         </div>
 
@@ -385,17 +386,17 @@
 
       <!-- ================= TAB 2: RESEARCH ================= -->
       <section id="tab-research" class="tab-content hidden space-y-8">
-        <div>
+        <div id="overview">
           <h1 class="text-xl font-bold tracking-tight text-ubc-navy mb-2">Research Overview</h1>
           <p class="text-[15px] text-academic-body leading-relaxed">
-            My research combines computational biophysics, biomaterials, synthetic biology, and immunoengineering to study T cell pharmacology and leukemogenesis.
+            My research combines computational biophysics, biomaterials, synthetic biology, and immunoengineering to study T cell pharmacology, mechanotransduction, and childhood leukemogenesis.
           </p>
         </div>
 
         <div class="space-y-8">
           
-          <!-- Systems Pharmacology Card with Smooth Vector Animation -->
-          <div id="fsi" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
+          <!-- T Cell Engagers Card with Smooth Vector Animation -->
+          <div id="tcell-engagers" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
             <div class="border-b border-gray-100 pb-4">
               <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Systems Pharmacology</span>
               <h2 class="text-lg font-bold text-gray-900 mt-2">Systems Pharmacology & Mechanism of T Cell Engagers</h2>
@@ -425,7 +426,7 @@
                     <circle cx="0" cy="0" r="110" fill="#e0f2fe" stroke="#005ca7" stroke-width="5" />
                     <circle cx="-35" cy="15" r="50" fill="#0f1d40" />
 
-                    <!-- TCR RECEPTOR (CD3 SUBUNITS REMOVED) -->
+                    <!-- TCR RECEPTOR -->
                     <g transform="translate(15, 0)">
                       <!-- Extended Enlarged TCR Stalk (UBC Cyan) reaching out to BiTE -->
                       <path d="M 75 -10 L 122 -10 M 122 -10 L 153 -30 M 122 -10 L 153 10" stroke="#01a7e1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -496,6 +497,28 @@
               <a href="#" class="academic-link font-medium flex items-center gap-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> PDF Paper</a>
               <a href="https://github.com/nikkobioe" target="_blank" class="academic-link font-medium flex items-center gap-1"><i data-lucide="github" class="w-3.5 h-3.5"></i> Code Repository</a>
             </div>
+          </div>
+
+          <!-- Childhood Leukemogenesis Card -->
+          <div id="childhood-leukemogenesis" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-4">
+            <div class="border-b border-gray-100 pb-4">
+              <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Developmental Oncology</span>
+              <h2 class="text-lg font-bold text-gray-900 mt-2">Childhood T Cell Leukemogenesis</h2>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Studying the molecular, cellular, and microenvironmental factors driving early T-cell progenitor transformation and T-cell acute lymphoblastic leukemia (T-ALL) progression in pediatric populations.
+            </p>
+          </div>
+
+          <!-- Biophysics & Biomaterials Card -->
+          <div id="biophysics-biomaterials" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-4">
+            <div class="border-b border-gray-100 pb-4">
+              <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Mechanobiology & Biomaterials</span>
+              <h2 class="text-lg font-bold text-gray-900 mt-2">Biophysics & Biomaterial Niche Engineering</h2>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Elucidating TCR mechanotransduction, force-amplified kinetic proofreading, and developing thymus-mimetic 3D hydrogel matrices to regulate human progenitor T-cell differentiation and lineage specification.
+            </p>
           </div>
 
         </div>
@@ -849,22 +872,11 @@
       if (el) el.classList.toggle('hidden');
     }
 
-    const bibtexEntries = {
-      'bib-1': `@article{jeffreys2024reference,
-  title={A reference-map technique for two-phase fluid-structure interaction simulations},
-  author={Jeffreys, Nikko and Rycroft, Chris H},
-  journal={Journal of Computational Physics},
-  volume={480},
-  pages={112001},
-  year={2024}
-}`
-    };
-
     function openBibtex(id) {
       const modal = document.getElementById('bibtex-modal');
       const textarea = document.getElementById('bibtex-code');
       if (modal && textarea) {
-        textarea.value = bibtexEntries[id] || '';
+        textarea.value = '';
         modal.classList.remove('hidden');
       }
     }
