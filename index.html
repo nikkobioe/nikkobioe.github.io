@@ -219,42 +219,42 @@
       90%, 100% { transform: translate(780px, 240px) scale(1); opacity: 0; }
     }
 
-    /* 3D Hydrogel Proliferation & Receptor-Ligand Animation Keyframes */
+    /* 3D Hydrogel Proliferation Animation Keyframes */
     .hydrogel-animate #hydrogel-svg-content {
       animation: animFadeLoop 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .hydrogel-animate #hydrogel-single-cell {
+    .hydrogel-animate #hydrogel-stage-single {
       animation: animHydrogelSingle 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .hydrogel-animate #hydrogel-dividing-cells {
+    .hydrogel-animate #hydrogel-stage-divide {
       animation: animHydrogelDivide 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
-    .hydrogel-animate #hydrogel-cluster-cells {
+    .hydrogel-animate #hydrogel-stage-cluster {
       animation: animHydrogelCluster 14s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
     @keyframes animHydrogelSingle {
-      0% { transform: scale(0.7); opacity: 0; }
-      4% { transform: scale(1); opacity: 1; }
-      20% { transform: scale(1.08); opacity: 1; }
-      25%, 100% { transform: scale(0.8); opacity: 0; }
+      0% { transform: scale(0.85); opacity: 0; }
+      3% { transform: scale(1); opacity: 1; }
+      22% { transform: scale(1.04); opacity: 1; }
+      26%, 100% { transform: scale(0.9); opacity: 0; }
     }
 
     @keyframes animHydrogelDivide {
-      0%, 25% { transform: scale(0.8); opacity: 0; }
-      29% { transform: scale(1); opacity: 1; }
-      48% { transform: scale(1.05); opacity: 1; }
-      54%, 100% { transform: scale(0.8); opacity: 0; }
+      0%, 26% { transform: scale(0.88); opacity: 0; }
+      30% { transform: scale(1); opacity: 1; }
+      48% { transform: scale(1.03); opacity: 1; }
+      52%, 100% { transform: scale(0.9); opacity: 0; }
     }
 
     @keyframes animHydrogelCluster {
-      0%, 54% { transform: scale(0.85); opacity: 0; }
-      59% { transform: scale(1); opacity: 1; }
-      82% { transform: scale(1); opacity: 1; }
-      88%, 100% { transform: scale(0.9); opacity: 0; }
+      0%, 52% { transform: scale(0.92); opacity: 0; }
+      57% { transform: scale(1); opacity: 1; }
+      83% { transform: scale(1); opacity: 1; }
+      88%, 100% { transform: scale(0.95); opacity: 0; }
     }
   </style>
 </head>
@@ -778,157 +778,261 @@
             </p>
           </div>
 
-          <!-- Mechanobiology & Biomaterials Card with 3D Hydrogel Proliferation Animation -->
+          <!-- Mechanobiology & Biomaterials Card with Hydrogel Proliferation Animation -->
           <div id="biophysics-biomaterials" class="p-6 rounded-xl border border-gray-200 bg-white shadow-sm space-y-5">
             <div class="border-b border-gray-100 pb-4">
               <span class="text-xs font-semibold uppercase tracking-wider text-ubc-blue bg-blue-50 px-2.5 py-1 rounded-full">Mechanobiology & Biomaterials</span>
               <h2 class="text-lg font-bold text-gray-900 mt-2">Biophysics & Biomaterial Niche Engineering</h2>
             </div>
 
-            <!-- Vector Schematic Canvas with 3D Hydrogel Thymocyte Proliferation & Receptor-Ligand Interactions -->
+            <!-- Vector Schematic Canvas Matching Reference Image Layout in UBC Gray / Blue Palette -->
             <div class="relative w-full aspect-[16/9] bg-gray-50/50 rounded-lg border border-gray-200/80 flex items-center justify-center overflow-hidden">
               <svg id="hydrogel-svg" viewBox="0 0 900 480" class="w-full h-full select-none hydrogel-animate">
-                <defs>
-                  <marker id="hydrogel-arrow-navy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f1d40" />
-                  </marker>
-                </defs>
 
-                <!-- 1. BACKGROUND 3D HYDROGEL POLYMER MESH (UBC BLUES & GRAYS) -->
-                <g id="hydrogel-polymer-mesh">
-                  <!-- Wavy Main Hydrogel Fibers -->
-                  <path d="M 40 110 C 180 50, 320 180, 480 90 C 640 0, 760 160, 860 100" fill="none" stroke="#70c4e8" stroke-width="4.5" opacity="0.65" stroke-linecap="round"/>
-                  <path d="M 30 240 C 200 170, 310 320, 450 220 C 590 120, 710 290, 870 210" fill="none" stroke="#005ca7" stroke-width="3.5" opacity="0.45" stroke-linecap="round"/>
-                  <path d="M 50 380 C 190 310, 350 430, 490 340 C 630 250, 750 410, 850 360" fill="none" stroke="#01a7e1" stroke-width="4" opacity="0.55" stroke-linecap="round"/>
-                  
-                  <!-- Transverse Intersecting Gel Network Fibers -->
-                  <path d="M 160 40 C 110 160, 220 280, 150 420" fill="none" stroke="#44b4e4" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
-                  <path d="M 420 30 C 370 170, 480 300, 410 440" fill="none" stroke="#0f1d40" stroke-width="2.5" opacity="0.3" stroke-linecap="round"/>
-                  <path d="M 720 40 C 670 180, 780 290, 710 430" fill="none" stroke="#005ca7" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
+                <!-- BACKGROUND GEL BLOCK (Cushion Border) -->
+                <path d="M 30 30 C 250 12, 650 12, 870 30 C 890 180, 890 300, 870 450 C 650 468, 250 468, 30 450 C 10 300, 10 180, 30 30 Z" 
+                      fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
 
-                  <!-- Polymer Matrix Crosslink Nodes -->
-                  <circle cx="178" cy="115" r="5" fill="#0f1d40"/>
-                  <circle cx="445" cy="225" r="5" fill="#0f1d40"/>
-                  <circle cx="738" cy="142" r="5" fill="#0f1d40"/>
-                  <circle cx="215" cy="365" r="5" fill="#0f1d40"/>
-                  <circle cx="692" cy="350" r="5" fill="#0f1d40"/>
+                <!-- POLYMER GEL FIBERS NETWORK (Mapped to UBC Blues & Grays) -->
+                <g id="hydrogel-fiber-mesh">
+                  <path d="M 35 170 C 180 20, 420 190, 610 30 C 760 -20, 820 140, 880 90" fill="none" stroke="#70c4e8" stroke-width="4" opacity="0.8" stroke-linecap="round"/>
+                  <path d="M 25 250 C 210 170, 390 310, 610 190 C 770 110, 840 250, 880 210" fill="none" stroke="#005ca7" stroke-width="3.5" opacity="0.6" stroke-linecap="round"/>
+                  <path d="M 15 360 C 190 270, 370 420, 570 310 C 750 210, 850 370, 870 330" fill="none" stroke="#01a7e1" stroke-width="4" opacity="0.7" stroke-linecap="round"/>
+                  <path d="M 45 420 C 210 330, 440 450, 670 380 C 770 350, 830 440, 860 410" fill="none" stroke="#38bdf8" stroke-width="3" opacity="0.6" stroke-linecap="round"/>
+
+                  <!-- Cross Intersecting Fibers -->
+                  <path d="M 150 40 C 110 170, 230 270, 130 430" fill="none" stroke="#94a3b8" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+                  <path d="M 410 25 C 370 170, 470 310, 390 440" fill="none" stroke="#0f1d40" stroke-width="2.5" opacity="0.35" stroke-linecap="round"/>
+                  <path d="M 710 35 C 670 170, 770 290, 690 430" fill="none" stroke="#005ca7" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+
+                  <!-- Fiber Crosslink Points (Solid Dots) -->
+                  <circle cx="165" cy="115" r="5.5" fill="#0f1d40"/>
+                  <circle cx="438" cy="225" r="5.5" fill="#0f1d40"/>
+                  <circle cx="732" cy="138" r="5.5" fill="#0f1d40"/>
+                  <circle cx="210" cy="360" r="5.5" fill="#0f1d40"/>
+                  <circle cx="685" cy="345" r="5.5" fill="#0f1d40"/>
+                  <circle cx="565" cy="312" r="5.5" fill="#0f1d40"/>
+                  <circle cx="340" cy="140" r="5.5" fill="#0f1d40"/>
                 </g>
 
-                <!-- 2. MATRIX-TETHERED LIGANDS ANCHORED ALONG HYDROGEL FIBERS -->
-                <g id="hydrogel-tethered-ligands">
-                  <!-- Tethered Notch Ligands (DLL4 - Cyan Caps on Dark Stems) -->
-                  <g transform="translate(180, 115)">
-                    <line x1="0" y1="0" x2="22" y2="-20" stroke="#0f1d40" stroke-width="2.5"/>
-                    <rect x="20" y="-28" width="16" height="10" rx="3" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                <!-- SOLUBLE & TETHERED MATRIX LIGANDS IN GEL (Matching Image Positions) -->
+                <g id="hydrogel-tethered-ligands-mesh">
+                  <!-- Tethered Rounded Rectangles on Black Stalks (Notch / Fc Ligands) -->
+                  <g transform="translate(130, 95) rotate(-35)">
+                    <line x1="0" y1="0" x2="0" y2="-22" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <rect x="-8" y="-48" width="16" height="28" rx="6" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
                   </g>
 
-                  <g transform="translate(445, 225)">
-                    <line x1="0" y1="0" x2="-25" y2="-15" stroke="#0f1d40" stroke-width="2.5"/>
-                    <rect x="-39" y="-22" width="16" height="10" rx="3" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  <g transform="translate(438, 80)">
+                    <line x1="0" y1="0" x2="0" y2="22" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <rect x="-8" y="20" width="16" height="28" rx="6" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
                   </g>
 
-                  <g transform="translate(692, 350)">
-                    <line x1="0" y1="0" x2="20" y2="20" stroke="#0f1d40" stroke-width="2.5"/>
-                    <rect x="18" y="18" width="16" height="10" rx="3" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  <g transform="translate(732, 110) rotate(-25)">
+                    <line x1="0" y1="0" x2="0" y2="22" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <rect x="-8" y="20" width="16" height="28" rx="6" fill="#0f1d40" stroke="#005ca7" stroke-width="1.5"/>
                   </g>
 
-                  <!-- Matrix Integrin Ligand Motifs (VCAM-1 / RGDS - Navy Caps) -->
-                  <g transform="translate(215, 365)">
-                    <line x1="0" y1="0" x2="20" y2="-22" stroke="#0f1d40" stroke-width="2.5"/>
-                    <circle cx="28" cy="-28" r="7" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                  <g transform="translate(785, 230) rotate(35)">
+                    <line x1="0" y1="0" x2="0" y2="-22" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <rect x="-8" y="-48" width="16" height="28" rx="6" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
                   </g>
 
-                  <g transform="translate(738, 142)">
-                    <line x1="0" y1="0" x2="-22" y2="18" stroke="#0f1d40" stroke-width="2.5"/>
-                    <circle cx="-28" cy="23" r="7" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                  <g transform="translate(150, 310) rotate(80)">
+                    <line x1="0" y1="0" x2="0" y2="-22" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <rect x="-8" y="-48" width="16" height="28" rx="6" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
                   </g>
 
-                  <!-- Soluble Cytokines & Growth Factors Floating in Hydrogel Pores -->
-                  <circle cx="110" cy="220" r="5" fill="#44b4e4" opacity="0.8"/>
-                  <circle cx="340" cy="140" r="6" fill="#70c4e8" opacity="0.8"/>
-                  <circle cx="580" cy="380" r="5" fill="#01a7e1" opacity="0.8"/>
-                  <circle cx="810" cy="270" r="6" fill="#44b4e4" opacity="0.8"/>
+                  <g transform="translate(585, 310) rotate(-15)">
+                    <line x1="0" y1="0" x2="0" y2="20" stroke="#0f1d40" stroke-width="2.5"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <rect x="-8" y="18" width="16" height="26" rx="6" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                    <rect x="-8" y="46" width="16" height="26" rx="6" fill="#0f1d40" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <!-- Soluble / Tethered Cyan Ligand Spheres -->
+                  <g transform="translate(535, 120)">
+                    <line x1="0" y1="0" x2="0" y2="12" stroke="#0f1d40" stroke-width="2"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <circle cx="0" cy="18" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(728, 70)">
+                    <line x1="0" y1="0" x2="-10" y2="10" stroke="#0f1d40" stroke-width="2"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <circle cx="-14" cy="14" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(70, 215)">
+                    <line x1="0" y1="0" x2="10" y2="10" stroke="#0f1d40" stroke-width="2"/>
+                    <circle cx="0" cy="0" r="4" fill="#0f1d40"/>
+                    <circle cx="14" cy="14" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(350, 215)">
+                    <circle cx="0" cy="0" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
+
+                  <g transform="translate(515, 220)">
+                    <circle cx="0" cy="0" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                  </g>
                 </g>
 
-                <!-- 3. ANIMATED DYNAMIC THYMOCYTE PROLIFERATION STAGES -->
+                <!-- DYNAMIC ANIMATED MULTI-STAGE PROLIFERATION -->
                 <g id="hydrogel-svg-content">
 
-                  <!-- STAGE A: Single Progenitor Thymocyte Binding Hydrogel Matrix (0s - 3.5s) -->
-                  <g id="hydrogel-single-cell" transform="translate(450, 230)">
-                    <!-- Single Thymocyte Cell Body & Nucleus -->
-                    <circle cx="0" cy="0" r="52" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
-                    <circle cx="-12" cy="10" r="22" fill="#0f1d40"/>
+                  <!-- STAGE 1: Single Progenitor Thymocyte (0s - 3.5s) -->
+                  <g id="hydrogel-stage-single" transform="translate(450, 230)">
+                    <circle cx="0" cy="0" r="54" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
+                    <circle cx="-12" cy="10" r="23" fill="#0f1d40"/>
 
-                    <!-- Membrane Notch Receptors Binding Matrix DLL4 -->
-                    <path d="M -35 -35 L -60 -50" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
-                    <path d="M 38 -30 L 60 -42" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+                    <!-- Notch Receptor Complex on Single Cell -->
+                    <path d="M -36 -38 L -58 -52" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M 38 -32 L 62 -45" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
 
-                    <text x="0" y="85" text-anchor="middle" fill="#0f1d40" font-size="14" font-weight="700">Progenitor Thymocyte in 3D Hydrogel</text>
+                    <text x="0" y="85" text-anchor="middle" fill="#0f1d40" font-size="14" font-weight="700">Progenitor Thymocyte in 3D Matrix</text>
                   </g>
 
-                  <!-- STAGE B: Mitotic Division / Progenitor Splitting (3.5s - 7.5s) -->
-                  <g id="hydrogel-dividing-cells" transform="translate(450, 230)">
-                    <!-- Daughter Cell 1 (Left) -->
-                    <g transform="translate(-55, -20)">
-                      <circle cx="0" cy="0" r="46" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                      <circle cx="-10" cy="8" r="19" fill="#0f1d40"/>
-                      <!-- Notch Receptors -->
-                      <path d="M -25 -32 L -45 -45" stroke="#01a7e1" stroke-width="3" stroke-linecap="round"/>
+                  <!-- STAGE 2: Mitotic Progenitor Division (3.5s - 7.2s) -->
+                  <g id="hydrogel-stage-divide" transform="translate(450, 230)">
+                    <g transform="translate(-52, -18)">
+                      <circle cx="0" cy="0" r="48" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="-10" cy="8" r="20" fill="#0f1d40"/>
+                      <path d="M -26 -34 L -46 -48" stroke="#01a7e1" stroke-width="3" stroke-linecap="round"/>
                     </g>
 
-                    <!-- Daughter Cell 2 (Right) -->
-                    <g transform="translate(55, 20)">
-                      <circle cx="0" cy="0" r="46" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                      <circle cx="10" cy="-8" r="19" fill="#0f1d40"/>
-                      <!-- Integrin Receptors -->
-                      <path d="M 28 28 L 48 42" stroke="#005ca7" stroke-width="3" stroke-linecap="round"/>
+                    <g transform="translate(52, 18)">
+                      <circle cx="0" cy="0" r="48" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
+                      <circle cx="10" cy="-8" r="20" fill="#0f1d40"/>
+                      <path d="M 28 30 L 48 44" stroke="#005ca7" stroke-width="3" stroke-linecap="round"/>
                     </g>
 
                     <text x="0" y="105" text-anchor="middle" fill="#005ca7" font-size="14" font-weight="700">Mechanosensitive Proliferation</text>
                   </g>
 
-                  <!-- STAGE C: Multicellular Proliferating Thymocyte Cluster in 3D Matrix (7.5s - 14s) -->
-                  <!-- Layout directly inspired by image_5fa175.png with full receptor-ligand mesh contacts -->
-                  <g id="hydrogel-cluster-cells" transform="translate(450, 230)">
+                  <!-- STAGE 3: MULTICELLULAR CLUSTER MATCHING REFERENCE IMAGE LAYOUT EXACTLY (7.2s - 14s) -->
+                  <g id="hydrogel-stage-cluster">
 
-                    <!-- Cluster Cell 1: Top-Left -->
-                    <g transform="translate(-110, -70)">
-                      <circle cx="0" cy="0" r="48" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                      <circle cx="-10" cy="-8" r="20" fill="#0f1d40"/>
-                      <!-- Receptors engages matrix fiber -->
-                      <path d="M -30 -30 L -48 -45" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
-                      <path d="M -15 38 L -28 52" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+                    <!-- CELL 1: TOP-LEFT CELL (Center ~ 280, 140) -->
+                    <g id="cluster-cell-1" transform="translate(280, 140)">
+                      <circle cx="0" cy="0" r="54" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
+                      <circle cx="-12" cy="-12" r="22" fill="#0f1d40"/>
+
+                      <!-- Left Forked Receptor grasping Cyan Sphere on Stalk -->
+                      <g transform="translate(-42, 22) rotate(145)">
+                        <path d="M 0 0 L 18 -10 M 0 0 L 18 10" stroke="#0f1d40" stroke-width="3" stroke-linecap="round"/>
+                      </g>
+                      <!-- Tethered Sphere on Gel Fiber -->
+                      <g transform="translate(-75, 32)">
+                        <line x1="0" y1="0" x2="-10" y2="15" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="-10" cy="15" r="4" fill="#0f1d40"/>
+                        <circle cx="0" cy="0" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                      </g>
+
+                      <!-- Right Complex: Stalk + Cyan Square + Loop + Rounded Rectangle -->
+                      <g transform="translate(38, 18) rotate(25)">
+                        <line x1="0" y1="0" x2="22" y2="0" stroke="#0f1d40" stroke-width="2.5"/>
+                        <rect x="22" y="-6" width="12" height="12" rx="2" fill="#01a7e1" stroke="#005ca7" stroke-width="1"/>
+                        <path d="M 34 0 C 44 -12, 44 12, 54 0" fill="none" stroke="#0f1d40" stroke-width="2"/>
+                        <rect x="54" y="-8" width="30" height="16" rx="5" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                        <line x1="84" y1="0" x2="100" y2="0" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="100" cy="0" r="4" fill="#0f1d40"/>
+                      </g>
                     </g>
 
-                    <!-- Cluster Cell 2: Top-Right -->
-                    <g transform="translate(110, -60)">
-                      <circle cx="0" cy="0" r="50" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                      <circle cx="12" cy="-10" r="21" fill="#0f1d40"/>
-                      <!-- Receptors engages matrix fiber -->
-                      <path d="M 25 -35 L 42 -52" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
-                      <path d="M -38 -25 L -55 -38" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+
+                    <!-- CELL 2: TOP-RIGHT CELL (Center ~ 620, 150) -->
+                    <g id="cluster-cell-2" transform="translate(620, 150)">
+                      <circle cx="0" cy="0" r="56" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
+                      <circle cx="14" cy="-14" r="24" fill="#0f1d40"/>
+
+                      <!-- Top-Left Forked Receptor grasping Cyan Sphere on Stalk -->
+                      <g transform="translate(-45, -25) rotate(-145)">
+                        <path d="M 0 0 L 18 -10 M 0 0 L 18 10" stroke="#0f1d40" stroke-width="3" stroke-linecap="round"/>
+                      </g>
+                      <!-- Sphere on Fiber -->
+                      <g transform="translate(-78, -36)">
+                        <line x1="0" y1="0" x2="-10" y2="-12" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="-10" cy="-12" r="4" fill="#0f1d40"/>
+                        <circle cx="0" cy="0" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                      </g>
+
+                      <!-- Bottom-Left Complex: Stalk + Cyan Square + Loop + TWO Stacked Rounded Rectangles -->
+                      <g transform="translate(-22, 45) rotate(105)">
+                        <line x1="0" y1="0" x2="20" y2="0" stroke="#0f1d40" stroke-width="2.5"/>
+                        <rect x="20" y="-6" width="12" height="12" rx="2" fill="#01a7e1" stroke="#005ca7" stroke-width="1"/>
+                        <path d="M 32 0 C 42 -12, 42 12, 52 0" fill="none" stroke="#0f1d40" stroke-width="2"/>
+                        <rect x="52" y="-8" width="28" height="16" rx="5" fill="#0f1d40" stroke="#005ca7" stroke-width="1.5"/>
+                        <rect x="83" y="-8" width="28" height="16" rx="5" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                        <line x1="111" y1="0" x2="125" y2="0" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="125" cy="0" r="4" fill="#0f1d40"/>
+                      </g>
                     </g>
 
-                    <!-- Cluster Cell 3: Bottom-Left -->
-                    <g transform="translate(-80, 75)">
-                      <circle cx="0" cy="0" r="52" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                      <circle cx="-12" cy="10" r="22" fill="#0f1d40"/>
-                      <!-- Receptors engages matrix fiber -->
-                      <path d="M -35 32 L -52 48" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
-                      <path d="M 38 28 L 55 42" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
+
+                    <!-- CELL 3: BOTTOM-LEFT CELL (Center ~ 310, 330) -->
+                    <g id="cluster-cell-3" transform="translate(310, 330)">
+                      <circle cx="0" cy="0" r="58" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
+                      <circle cx="-14" cy="14" r="25" fill="#0f1d40"/>
+
+                      <!-- Top-Right Complex: Stalk + Cyan Square + Loop + TWO Stacked Rounded Rectangles -->
+                      <g transform="translate(18, -48) rotate(-65)">
+                        <line x1="0" y1="0" x2="20" y2="0" stroke="#0f1d40" stroke-width="2.5"/>
+                        <rect x="20" y="-6" width="12" height="12" rx="2" fill="#01a7e1" stroke="#005ca7" stroke-width="1"/>
+                        <path d="M 32 0 C 42 -12, 42 12, 52 0" fill="none" stroke="#0f1d40" stroke-width="2"/>
+                        <rect x="52" y="-8" width="28" height="16" rx="5" fill="#0f1d40" stroke="#005ca7" stroke-width="1.5"/>
+                        <rect x="83" y="-8" width="28" height="16" rx="5" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                        <line x1="111" y1="0" x2="125" y2="0" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="125" cy="0" r="4" fill="#0f1d40"/>
+                      </g>
+
+                      <!-- Right Forked Receptor grasping Cyan Sphere -->
+                      <g transform="translate(48, 12) rotate(10)">
+                        <path d="M 0 0 L 18 -10 M 0 0 L 18 10" stroke="#0f1d40" stroke-width="3" stroke-linecap="round"/>
+                      </g>
+                      <!-- Sphere on Fiber -->
+                      <g transform="translate(82, 16)">
+                        <line x1="0" y1="0" x2="12" y2="10" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="12" cy="10" r="4" fill="#0f1d40"/>
+                        <circle cx="0" cy="0" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                      </g>
                     </g>
 
-                    <!-- Cluster Cell 4: Bottom-Right -->
-                    <g transform="translate(120, 65)">
-                      <circle cx="0" cy="0" r="46" fill="#e0f2fe" stroke="#005ca7" stroke-width="3.5"/>
-                      <circle cx="10" cy="8" r="19" fill="#0f1d40"/>
-                      <!-- Receptors engages matrix fiber -->
-                      <path d="M 32 -28 L 48 -42" stroke="#01a7e1" stroke-width="3.5" stroke-linecap="round"/>
-                      <path d="M 28 32 L 45 48" stroke="#005ca7" stroke-width="3.5" stroke-linecap="round"/>
+
+                    <!-- CELL 4: BOTTOM-RIGHT CELL (Center ~ 650, 330) -->
+                    <g id="cluster-cell-4" transform="translate(650, 330)">
+                      <circle cx="0" cy="0" r="52" fill="#e0f2fe" stroke="#005ca7" stroke-width="4"/>
+                      <circle cx="12" cy="12" r="21" fill="#0f1d40"/>
+
+                      <!-- Top-Left Complex: Stalk + Cyan Square + Loop + TWO Stacked Rounded Rectangles -->
+                      <g transform="translate(-28, -38) rotate(-135)">
+                        <line x1="0" y1="0" x2="20" y2="0" stroke="#0f1d40" stroke-width="2.5"/>
+                        <rect x="20" y="-6" width="12" height="12" rx="2" fill="#01a7e1" stroke="#005ca7" stroke-width="1"/>
+                        <path d="M 32 0 C 42 -12, 42 12, 52 0" fill="none" stroke="#0f1d40" stroke-width="2"/>
+                        <rect x="52" y="-8" width="28" height="16" rx="5" fill="#005ca7" stroke="#0f1d40" stroke-width="1.5"/>
+                        <rect x="83" y="-8" width="28" height="16" rx="5" fill="#0f1d40" stroke="#005ca7" stroke-width="1.5"/>
+                        <line x1="111" y1="0" x2="125" y2="0" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="125" cy="0" r="4" fill="#0f1d40"/>
+                      </g>
+
+                      <!-- Right Forked Receptor grasping Cyan Sphere -->
+                      <g transform="translate(42, 10) rotate(-15)">
+                        <path d="M 0 0 L 18 -10 M 0 0 L 18 10" stroke="#0f1d40" stroke-width="3" stroke-linecap="round"/>
+                      </g>
+                      <!-- Sphere on Fiber -->
+                      <g transform="translate(74, 6)">
+                        <line x1="0" y1="0" x2="12" y2="10" stroke="#0f1d40" stroke-width="2"/>
+                        <circle cx="12" cy="10" r="4" fill="#0f1d40"/>
+                        <circle cx="0" cy="0" r="8" fill="#01a7e1" stroke="#005ca7" stroke-width="1.5"/>
+                      </g>
                     </g>
 
-                    <!-- Center Label inside SVG canvas -->
-                    <text x="0" y="165" text-anchor="middle" fill="#0f1d40" font-size="15" font-weight="700">3D Thymic Proliferating Cluster & Niche Signaling</text>
+                    <text x="450" y="445" text-anchor="middle" fill="#0f1d40" font-size="15" font-weight="700">3D Thymic Proliferating Cluster & Receptor-Ligand Niche</text>
                   </g>
 
                 </g>
